@@ -1,74 +1,74 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ArrowRight, MicVocal } from "lucide-react";
 import { SPEAKERS } from "@/data/conference";
 
-export function KeynotesSection() {
-  const keynoteSpeakers = SPEAKERS.filter((s) => s.isKeynote);
+const KEYNOTE_SPEAKERS = SPEAKERS.filter((speaker) => speaker.isKeynote);
 
+export function KeynotesSection() {
   return (
-    <section className="border-t border-slate-200/80 bg-white py-16 sm:py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-12">
-          <div className="max-w-2xl">
-            <p className="text-xs font-semibold uppercase tracking-wider text-[#3124eb]">
+    <section
+      id="keynotes"
+      className="relative isolate overflow-hidden bg-slate-950 px-4 py-16 text-white sm:px-6 sm:py-20 lg:px-8"
+    >
+      <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_12%_12%,rgba(37,99,235,0.28),transparent_30%),radial-gradient(circle_at_88%_75%,rgba(13,148,136,0.2),transparent_34%)]" />
+      <div className="absolute inset-0 -z-10 opacity-[0.12] [background-image:linear-gradient(rgba(255,255,255,0.22)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.22)_1px,transparent_1px)] [background-size:42px_42px]" />
+
+      <div className="mx-auto max-w-7xl">
+        <div className="mb-10 flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
+          <div className="max-w-3xl">
+            <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-cyan-200">
+              <MicVocal className="h-4 w-4" aria-hidden />
               Keynote stage
             </p>
-            <h2 className="mt-2 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl lg:text-4xl">
+            <h2 className="mt-3 text-3xl font-semibold leading-tight sm:text-4xl">
               Meet the voices shaping the conference conversation
             </h2>
-            <p className="mt-3 text-base text-slate-600">
-              Invited experts connecting research breakthroughs with responsible, real-world impact.
+            <p className="mt-5 max-w-2xl text-base leading-7 text-slate-300">
+              Invited experts connecting research breakthroughs with responsible,
+              real-world impact.
             </p>
           </div>
-          <Button
-            asChild
-            variant="outline"
-            className="self-start md:self-auto border-slate-300 hover:bg-slate-50 text-slate-800"
+          <Link
+            href="/icai-2026/keynotes"
+            className="inline-flex min-h-11 w-fit items-center justify-center gap-2 rounded-md border border-white/20 bg-white px-5 text-sm font-semibold text-slate-950 transition hover:-translate-y-0.5 hover:bg-cyan-50"
           >
-            <Link href="/icai-2026/keynotes">
-              View all keynotes
-              <ArrowRight className="ml-1.5 h-4 w-4" />
-            </Link>
-          </Button>
+            View all keynotes
+            <ArrowRight className="h-4 w-4" aria-hidden />
+          </Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {keynoteSpeakers.map((speaker) => (
+        <div className="flex flex-wrap justify-center gap-5">
+          {KEYNOTE_SPEAKERS.map((speaker) => (
             <div
               key={speaker.id}
-              className="group flex flex-col sm:flex-row overflow-hidden rounded-2xl border border-slate-200 bg-slate-50/50 shadow-xs transition hover:-translate-y-1 hover:border-blue-200 hover:bg-white hover:shadow-md"
+              className="w-full sm:w-[calc((100%_-_1.25rem)_/_2)] xl:w-[calc((100%_-_3.75rem)_/_4)]"
             >
-              <div className="relative aspect-[4/3] sm:aspect-square sm:w-56 shrink-0 overflow-hidden bg-gradient-to-br from-[#3124eb] to-teal-500">
-                <Image
-                  src={speaker.avatar}
-                  alt={speaker.name}
-                  fill
-                  className="object-cover transition duration-500 group-hover:scale-105"
-                  sizes="(min-width: 640px) 224px, 100vw"
-                />
-              </div>
-              <div className="flex flex-1 flex-col justify-between p-6">
-                <div>
-                  <span className="text-xs font-semibold uppercase tracking-wider text-blue-700">
+              <article className="group flex h-full flex-col overflow-hidden rounded-lg border border-white/10 bg-white/5 shadow-2xl backdrop-blur-sm">
+                <div className="relative aspect-[4/5] overflow-hidden bg-slate-800">
+                  <Image
+                    src={speaker.avatar}
+                    alt={speaker.name}
+                    fill
+                    className="object-cover transition duration-500 group-hover:scale-105"
+                    sizes="(min-width: 1280px) 25vw, (min-width: 640px) 50vw, 100vw"
+                  />
+                  <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_38%,rgba(2,6,23,0.96)_100%)]" />
+                  <div className="absolute left-4 top-4 rounded-md border border-white/15 bg-slate-950/55 px-3 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-white backdrop-blur">
                     {speaker.role}
-                  </span>
-                  <h3 className="mt-2 text-xl font-bold text-slate-900">
-                    {speaker.name}
-                  </h3>
-                  <div className="mt-3 space-y-1 text-sm text-slate-600">
-                    {speaker.affiliation.map((aff, i) => (
-                      <p key={i}>{aff}</p>
+                  </div>
+                  <div className="absolute inset-x-0 bottom-0 p-5">
+                    <h3 className="text-xl font-semibold leading-tight text-white">
+                      {speaker.name}
+                    </h3>
+                    {speaker.affiliation.map((item) => (
+                      <p key={item} className="mt-2 text-sm leading-6 text-slate-300">
+                        {item}
+                      </p>
                     ))}
                   </div>
                 </div>
-                <div className="mt-6 pt-4 border-t border-slate-200/80">
-                  <span className="text-xs font-semibold text-[#3124eb]">
-                    Keynote Speaker • ICAI-2026
-                  </span>
-                </div>
-              </div>
+              </article>
             </div>
           ))}
         </div>

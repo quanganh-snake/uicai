@@ -3,16 +3,14 @@ import Image from "next/image";
 interface PageHeaderProps {
   title: string;
   badge?: string;
-  description?: string;
 }
 
 export function PageHeader({
   title,
   badge = "AI-Native for Universities",
-  description,
 }: PageHeaderProps) {
   return (
-    <section className="relative flex min-h-[260px] items-center justify-center overflow-hidden bg-slate-950 px-4 py-14 text-center sm:min-h-[320px] sm:py-16 w-full">
+    <section className="relative flex min-h-[260px] items-center justify-center overflow-hidden bg-slate-950 px-4 py-14 text-center sm:min-h-[320px] sm:py-16">
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/banner.png"
@@ -24,30 +22,19 @@ export function PageHeader({
         />
         <div
           className="absolute inset-0"
-          style={{
-            backgroundColor: "#044182",
-            opacity: 0.72,
-            mixBlendMode: "multiply",
-          }}
+          style={{ backgroundColor: "#e9f782", opacity: 0.04 }}
         />
-        <div className="absolute inset-0 bg-slate-950/45" />
-        <div className="absolute inset-0 opacity-[0.16] [background-image:linear-gradient(rgba(255,255,255,0.22)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.22)_1px,transparent_1px)] [background-size:42px_42px]" />
       </div>
+      <div className="absolute inset-0 z-0 opacity-[0.16] [background-image:linear-gradient(rgba(255,255,255,0.22)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.22)_1px,transparent_1px)] [background-size:42px_42px]" />
 
-      <div className="relative z-10 max-w-4xl text-center px-4">
-        <div className="mb-4 inline-block rounded-full border border-blue-400/30 bg-blue-500/20 px-4 py-1.5 text-xs sm:text-sm font-semibold uppercase tracking-wider text-blue-200 backdrop-blur-md">
+      <div className="relative z-10 max-w-4xl animate-in fade-in slide-in-from-bottom-8 duration-700">
+        <div className="mb-5 inline-block max-w-full rounded-full border border-blue-500/20 bg-blue-500/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-blue-300 backdrop-blur-md sm:px-4 sm:text-sm sm:tracking-widest">
           {badge}
         </div>
-        <h1 className="text-3xl font-extrabold leading-tight text-white drop-shadow-xl sm:text-4xl md:text-5xl lg:text-6xl">
+        <h1 className="text-3xl font-extrabold leading-tight text-white drop-shadow-xl sm:text-4xl md:text-6xl">
           {title}
         </h1>
-        {description && (
-          <p className="mt-4 text-sm sm:text-base text-slate-200 max-w-2xl mx-auto drop-shadow leading-relaxed">
-            {description}
-          </p>
-        )}
       </div>
     </section>
   );
 }
-

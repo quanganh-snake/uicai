@@ -1,107 +1,104 @@
 import Image from "next/image";
-import { ExternalLink } from "lucide-react";
 
-export function PartnersSection() {
+interface Partner {
+  name: string;
+  href: string;
+  logo: string;
+  role?: string;
+}
+
+const HOST_PARTNERS: Partner[] = [
+  { name: "CMC University", href: "https://cmcu.edu.vn/", logo: "/images/cmc-uni.png" },
+];
+
+const COOPERATION_PARTNERS: Partner[] = [
+  {
+    name: "Steinbeis University - Schools of Next Practices",
+    href: "https://www.steinbeis-next.de/",
+    logo: "/images/steinbeis.svg",
+    role: "Co-organizer",
+  },
+  {
+    name: "Tsinghua University, Shenzhen International Graduate School (SIGS)",
+    href: "https://www.tsinghua.edu.cn/",
+    logo: "/images/tsinghua.jpg",
+    role: "Co-organizer",
+  },
+];
+
+function PartnerGroup({
+  label,
+  title,
+  partners,
+  background,
+  cardWidth,
+}: {
+  label: string;
+  title: string;
+  partners: Partner[];
+  background: string;
+  cardWidth: string;
+}) {
   return (
-    <section className="border-t border-slate-200/80 bg-white py-16 sm:py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-16">
-        {/* Host Institution */}
-        <div>
-          <div className="max-w-2xl mb-8">
-            <p className="text-xs font-semibold uppercase tracking-wider text-[#3124eb]">
-              Host Institutions
-            </p>
-            <h2 className="mt-2 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
-              Organized by academic and innovation partners
-            </h2>
-          </div>
-
-          <div className="max-w-md">
-            <a
-              href="https://cmcu.edu.vn/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex flex-col items-center sm:items-start p-6 rounded-xl border border-slate-200 bg-slate-50/50 hover:bg-white hover:border-blue-200 hover:shadow-md transition"
-            >
-              <div className="relative h-20 w-48 mb-4">
-                <Image
-                  src="/images/cmc-uni.png"
-                  alt="CMC University"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-              <div className="flex items-center gap-1.5 text-base font-bold text-slate-900 group-hover:text-[#3124eb] transition-colors">
-                <span>CMC University</span>
-                <ExternalLink className="h-4 w-4 text-slate-400 group-hover:text-[#3124eb]" />
-              </div>
-              <p className="mt-1 text-xs text-slate-500">
-                Lead Host & Organizing Institution
-              </p>
-            </a>
-          </div>
+    <section className={`${background} px-4 py-16 sm:px-6 sm:py-20 lg:px-8`}>
+      <div className="mx-auto max-w-7xl">
+        <div className="mx-auto mb-10 max-w-3xl text-center">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+            {label}
+          </p>
+          <h2 className="mt-3 text-3xl font-semibold text-slate-950">{title}</h2>
         </div>
-
-        {/* International Cooperation */}
-        <div>
-          <div className="max-w-2xl mb-8">
-            <p className="text-xs font-semibold uppercase tracking-wider text-[#3124eb]">
-              International Cooperation
-            </p>
-            <h2 className="mt-2 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
-              In cooperation with
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl">
+        <div className="flex flex-wrap justify-center gap-5">
+          {partners.map((partner) => (
             <a
-              href="https://www.steinbeis-next.de/"
+              key={partner.href}
+              href={partner.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex flex-col items-center sm:items-start p-6 rounded-xl border border-slate-200 bg-slate-50/50 hover:bg-white hover:border-blue-200 hover:shadow-md transition"
+              className={`flex min-h-56 w-full flex-col items-center justify-center rounded-lg border border-slate-200 bg-white p-6 text-center shadow-sm transition hover:-translate-y-0.5 hover:border-blue-200 hover:shadow-md ${cardWidth} lg:w-[calc((100%_-_2.5rem)_/_3)]`}
             >
-              <div className="relative h-20 w-48 mb-4">
+              <div className="flex h-28 items-center justify-center">
                 <Image
-                  src="/images/steinbeis.svg"
-                  alt="Steinbeis University - Schools of Next Practices"
-                  fill
-                  className="object-contain"
+                  src={partner.logo}
+                  alt={partner.name}
+                  width={512}
+                  height={192}
+                  className="max-h-24 w-auto max-w-64 object-contain"
                 />
               </div>
-              <div className="flex items-center gap-1.5 text-base font-bold text-slate-900 group-hover:text-[#3124eb] transition-colors">
-                <span>Steinbeis University - Schools of Next Practices</span>
-                <ExternalLink className="h-4 w-4 text-slate-400 group-hover:text-[#3124eb]" />
-              </div>
-              <p className="mt-1 text-xs font-semibold text-[#3124eb]">
-                Co-organizer • Germany
-              </p>
+              <h3 className="mt-5 text-center text-lg font-semibold text-slate-950">
+                {partner.name}
+              </h3>
+              {partner.role && (
+                <p className="mt-2 text-center text-sm font-medium text-slate-500">
+                  {partner.role}
+                </p>
+              )}
             </a>
-
-            <a
-              href="https://www.tsinghua.edu.cn/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex flex-col items-center sm:items-start p-6 rounded-xl border border-slate-200 bg-slate-50/50 hover:bg-white hover:border-blue-200 hover:shadow-md transition"
-            >
-              <div className="relative h-20 w-48 mb-4">
-                <Image
-                  src="/images/tsinghua.jpg"
-                  alt="Tsinghua University, Shenzhen International Graduate School (SIGS)"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-              <div className="flex items-center gap-1.5 text-base font-bold text-slate-900 group-hover:text-[#3124eb] transition-colors">
-                <span>Tsinghua University (SIGS)</span>
-                <ExternalLink className="h-4 w-4 text-slate-400 group-hover:text-[#3124eb]" />
-              </div>
-              <p className="mt-1 text-xs font-semibold text-[#3124eb]">
-                Co-organizer • China
-              </p>
-            </a>
-          </div>
+          ))}
         </div>
       </div>
     </section>
+  );
+}
+
+export function PartnersSection() {
+  return (
+    <>
+      <PartnerGroup
+        label="Host Institutions"
+        title="Organized by academic and innovation partners"
+        partners={HOST_PARTNERS}
+        background="bg-slate-50"
+        cardWidth="sm:w-[calc((100%_-_1.25rem)_/_2)]"
+      />
+      <PartnerGroup
+        label="International Cooperation"
+        title="In cooperation with"
+        partners={COOPERATION_PARTNERS}
+        background="bg-white"
+        cardWidth="md:w-[calc((100%_-_1.25rem)_/_2)]"
+      />
+    </>
   );
 }

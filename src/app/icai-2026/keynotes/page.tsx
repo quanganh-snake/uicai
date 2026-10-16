@@ -1,80 +1,115 @@
+import Image from "next/image";
+import { Building2, Cpu, GraduationCap, MicVocal, Sparkles } from "lucide-react";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { SPEAKERS } from "@/data/conference";
-import Image from "next/image";
-import { Sparkles, Globe2 } from "lucide-react";
+
+const KEYNOTE_SPEAKERS = SPEAKERS.filter((speaker) => speaker.isKeynote);
+
+const STAGE_FACTS = [
+  { value: String(KEYNOTE_SPEAKERS.length), label: "Keynote speakers", icon: MicVocal },
+  { value: "AI Native for University", label: "Focus", icon: Cpu },
+  { value: "Global", label: "Forum", icon: GraduationCap },
+];
+
+const VIEWPORT_SAFE_WIDTH = { maxWidth: "min(100%, calc(100vw - 2rem))" };
 
 export default function KeynotesPage() {
-  const keynoteSpeakers = SPEAKERS.filter((s) => s.isKeynote);
-
   return (
-    <div>
-      <PageHeader
-        title="Keynotes"
-        description="Meet the invited speakers connecting fundamental AI research, applied technology, responsible deployment and cross-disciplinary innovation."
-      />
+    <div className="min-h-screen bg-slate-50">
+      <PageHeader title="Keynotes" />
 
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 space-y-12">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 rounded-2xl border border-slate-200 bg-slate-50/70 p-6 sm:p-8">
-          <div className="lg:col-span-2 space-y-3">
-            <span className="text-xs font-semibold uppercase tracking-wider text-[#3124eb]">
-              AI Keynote Stage
-            </span>
-            <h2 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
-              Research voices shaping the frontier of intelligent systems.
-            </h2>
-            <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-              Meet the invited scholars and visionary leaders connecting breakthroughs in AI with universities, industrial applications, and educational innovation.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-3 gap-3">
-            <div className="flex flex-col items-center justify-center rounded-xl bg-white p-4 text-center border border-slate-200/80 shadow-xs">
-              <span className="font-mono text-3xl font-extrabold text-[#3124eb]">2</span>
-              <span className="mt-1 text-xs text-slate-500 font-medium">Keynote speakers</span>
-            </div>
-            <div className="flex flex-col items-center justify-center rounded-xl bg-white p-4 text-center border border-slate-200/80 shadow-xs">
-              <Sparkles className="h-6 w-6 text-[#3124eb]" />
-              <span className="mt-2 text-xs text-slate-500 font-medium">AI-Native Focus</span>
-            </div>
-            <div className="flex flex-col items-center justify-center rounded-xl bg-white p-4 text-center border border-slate-200/80 shadow-xs">
-              <Globe2 className="h-6 w-6 text-[#3124eb]" />
-              <span className="mt-2 text-xs text-slate-500 font-medium">Global Forum</span>
-            </div>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {keynoteSpeakers.map((speaker) => (
-            <div
-              key={speaker.id}
-              className="flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xs hover:border-blue-200 hover:shadow-md transition"
-            >
-              <div className="relative aspect-[16/10] w-full overflow-hidden bg-gradient-to-br from-[#3124eb] to-teal-500">
-                <Image
-                  src={speaker.avatar}
-                  alt={speaker.name}
-                  fill
-                  className="object-cover"
-                  sizes="(min-width: 768px) 50vw, 100vw"
-                />
+      <section className="px-4 py-12 sm:py-16 lg:py-20">
+        <div className="mx-auto w-full min-w-0 max-w-7xl">
+          <div
+            className="relative isolate mb-8 w-full min-w-0 overflow-hidden rounded-lg border border-slate-800 bg-slate-950 p-5 text-white shadow-2xl sm:p-7 lg:p-8"
+            style={VIEWPORT_SAFE_WIDTH}
+          >
+            <div className="absolute inset-0 -z-10 bg-[linear-gradient(120deg,rgba(37,99,235,0.28),transparent_38%),linear-gradient(290deg,rgba(20,184,166,0.22),transparent_42%)]" />
+            <div className="absolute inset-0 -z-10 opacity-[0.14] [background-image:linear-gradient(rgba(255,255,255,0.26)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.26)_1px,transparent_1px)] [background-size:34px_34px]" />
+            <div className="grid min-w-0 gap-7 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-end">
+              <div className="min-w-0">
+                <p className="inline-flex items-center gap-2 rounded-md border border-cyan-300/20 bg-cyan-300/10 px-3 py-2 text-xs font-semibold uppercase tracking-wider text-cyan-100">
+                  <Sparkles className="h-4 w-4" aria-hidden />
+                  AI keynote stage
+                </p>
+                <h2 className="mt-5 max-w-3xl [overflow-wrap:anywhere] text-2xl font-semibold leading-tight sm:text-3xl lg:text-4xl">
+                  Research voices shaping the frontier of intelligent systems.
+                </h2>
+                <p className="mt-4 max-w-3xl [overflow-wrap:anywhere] text-sm leading-7 text-slate-300 sm:text-base">
+                  Meet the invited speakers connecting fundamental AI research, applied
+                  technology, responsible deployment and cross-disciplinary innovation.
+                </p>
               </div>
-              <div className="p-6 sm:p-8 space-y-4">
-                <span className="inline-block rounded-md bg-blue-50 px-2.5 py-1 text-xs font-semibold uppercase tracking-wider text-[#3124eb]">
-                  {speaker.role}
-                </span>
-                <h3 className="text-2xl font-bold text-slate-900">
-                  {speaker.name}
-                </h3>
-                <div className="space-y-1 text-sm text-slate-600 leading-relaxed">
-                  {speaker.affiliation.map((aff, i) => (
-                    <p key={i}>{aff}</p>
-                  ))}
+              <div className="grid min-w-0 gap-3 sm:grid-cols-3 lg:grid-cols-1">
+                {STAGE_FACTS.map(({ value, label, icon: Icon }) => (
+                  <div
+                    key={label}
+                    className="grid min-w-0 grid-cols-[2.75rem_minmax(0,1fr)] gap-3 rounded-md border border-white/10 bg-white/10 p-3 backdrop-blur"
+                  >
+                    <div className="flex h-11 w-11 items-center justify-center rounded-md bg-white text-slate-950">
+                      <Icon className="h-5 w-5" aria-hidden />
+                    </div>
+                    <div className="min-w-0">
+                      <p className="[overflow-wrap:anywhere] text-lg font-semibold leading-6 text-white">
+                        {value}
+                      </p>
+                      <p className="mt-1 [overflow-wrap:anywhere] text-xs font-medium uppercase tracking-wider text-slate-400">
+                        {label}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
+            {KEYNOTE_SPEAKERS.map((speaker) => (
+              <article
+                key={speaker.id}
+                className="group w-full overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl"
+                style={VIEWPORT_SAFE_WIDTH}
+              >
+                <div className="relative grid gap-0 sm:grid-cols-[12rem_minmax(0,1fr)]">
+                  <div className="relative min-h-64 overflow-hidden bg-slate-950 sm:min-h-72">
+                    <Image
+                      src={speaker.avatar}
+                      alt={speaker.name}
+                      width={640}
+                      height={800}
+                      className="h-full min-h-64 w-full object-cover transition duration-500 group-hover:scale-105 sm:absolute sm:inset-0"
+                      sizes="(min-width: 1024px) 12rem, 100vw"
+                    />
+                    <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_42%,rgba(2,6,23,0.84))]" />
+                    <div className="absolute bottom-4 left-4 inline-flex items-center gap-2 rounded-md border border-white/15 bg-white/15 px-3 py-2 text-xs font-semibold uppercase tracking-wider text-white backdrop-blur">
+                      <MicVocal className="h-4 w-4" aria-hidden />
+                      {speaker.role}
+                    </div>
+                  </div>
+                  <div className="flex min-w-0 flex-col p-5 sm:p-6">
+                    <div className="mb-4 flex items-start justify-between gap-4">
+                      <div className="min-w-0">
+                        <h2 className="text-2xl font-semibold leading-tight text-slate-950">
+                          {speaker.name}
+                        </h2>
+                        {speaker.affiliation.map((item) => (
+                          <p
+                            key={item}
+                            className="mt-2 flex gap-2 text-sm font-medium leading-6 text-blue-700"
+                          >
+                            <Building2 className="mt-0.5 h-4 w-4 shrink-0" aria-hidden />
+                            <span>{item}</span>
+                          </p>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          ))}
+              </article>
+            ))}
+          </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 }

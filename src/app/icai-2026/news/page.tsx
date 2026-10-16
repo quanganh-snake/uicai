@@ -1,42 +1,33 @@
+import Link from "next/link";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { NEWS_ITEMS } from "@/data/conference";
-import Link from "next/link";
-import { Calendar, ArrowRight } from "lucide-react";
 
 export default function NewsPage() {
   return (
-    <div>
-      <PageHeader
-        title="News"
-        description="Latest news, announcements, and updates for The 2nd International Conference on AI: AI-Native for Universities and Industry."
-      />
+    <div className="min-h-screen bg-slate-50">
+      <PageHeader title="News" />
 
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-        <div className="max-w-4xl space-y-6">
-          {NEWS_ITEMS.map((item) => (
-            <Link
-              key={item.slug}
-              href={`/icai-2026/news/${item.slug}`}
-              className="group block rounded-xl border border-slate-200 bg-white p-6 shadow-xs hover:border-blue-200 hover:shadow-md transition"
-            >
-              <div className="flex items-center gap-2 text-xs font-semibold text-[#3124eb] mb-2">
-                <Calendar className="h-3.5 w-3.5" />
-                <span>{item.date}</span>
-              </div>
-              <h2 className="text-xl font-bold text-slate-900 group-hover:text-[#3124eb] transition-colors">
-                {item.title}
-              </h2>
-              <p className="mt-2 text-sm text-slate-600 leading-relaxed">
-                {item.excerpt}
-              </p>
-              <div className="mt-4 flex items-center text-xs font-semibold text-[#3124eb] group-hover:underline">
-                Read full article
-                <ArrowRight className="ml-1 h-3.5 w-3.5 transition group-hover:translate-x-0.5" />
-              </div>
-            </Link>
-          ))}
+      <section className="px-4 py-12 sm:py-16 lg:py-20">
+        <div className="mx-auto w-full min-w-0 max-w-5xl">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            {NEWS_ITEMS.map((item) => (
+              <Link
+                key={item.slug}
+                href={`/icai-2026/news/${item.slug}`}
+                className="group overflow-hidden rounded-lg border border-slate-900 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+              >
+                <div className="p-6">
+                  <p className="mb-3 text-sm font-medium text-slate-500">{item.date}</p>
+                  <h2 className="text-xl font-bold text-slate-900 group-hover:text-blue-600">
+                    {item.title}
+                  </h2>
+                  <p className="mt-3 line-clamp-3 text-slate-600">{item.excerpt}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 }

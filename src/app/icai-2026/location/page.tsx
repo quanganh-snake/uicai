@@ -1,84 +1,113 @@
+import type { CSSProperties } from "react";
 import { PageHeader } from "@/components/layout/PageHeader";
-import { REGISTRATION_FEES, CONFERENCE_INFO } from "@/data/conference";
-import { MapPin, Check, Info } from "lucide-react";
+import { REGISTRATION_FEES } from "@/data/conference";
+
+// Mirrors the reference site's CMS (Word-exported) table so the rendered
+// table geometry, borders and Calibri text match the original page.
+const CALIBRI: CSSProperties = { fontFamily: "Calibri, sans-serif" };
+const BODY_TEXT: CSSProperties = { ...CALIBRI, fontWeight: "normal" };
+const CELL_PARAGRAPH: CSSProperties = { margin: 0, lineHeight: "normal" };
+const OPTION_CELL: CSSProperties = {
+  width: "218.75pt",
+  borderWidth: "medium 1pt 1pt",
+  borderStyle: "none solid solid",
+  borderColor: "currentcolor windowtext windowtext",
+  padding: "0cm 5.4pt",
+};
+const FEE_CELL: CSSProperties = {
+  width: "180.6pt",
+  borderTop: "none",
+  borderLeft: "none",
+  borderBottom: "solid windowtext 1pt",
+  borderRight: "solid windowtext 1pt",
+  padding: "0cm 5.4pt",
+};
 
 export default function RegistrationFeesPage() {
   return (
-    <div>
-      <PageHeader
-        title="Registration & Fees"
-        description="Conference registration fees, entitlements, terms, and venue details for ICAI-2026."
-      />
+    <div className="min-h-screen bg-slate-50">
+      <PageHeader title="Registration & Fees" />
 
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 space-y-12">
-        {/* Fees Table */}
-        <div className="max-w-4xl space-y-6">
-          <h2 className="text-2xl font-bold tracking-tight text-slate-900">
-            Registration Fees
-          </h2>
-
-          <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-xs">
-            <table className="w-full text-left text-sm">
-              <thead className="bg-slate-50 border-b border-slate-200 text-xs uppercase tracking-wider font-semibold text-slate-600">
-                <tr>
-                  <th className="px-6 py-4">Registration Options</th>
-                  <th className="px-6 py-4">Fees</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-100">
-                {REGISTRATION_FEES.map((row, idx) => (
-                  <tr key={idx} className="hover:bg-slate-50/50 transition">
-                    <td className="px-6 py-4 font-semibold text-slate-900">
-                      {row.category}
+      <section className="px-4 py-12 sm:py-16 lg:py-20">
+        <div className="mx-auto w-full min-w-0 max-w-5xl">
+          <div className="prose prose-slate max-w-none rounded-xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5">
+            <h2 style={{ marginLeft: 0 }}>
+              <table
+                border={1}
+                cellSpacing={0}
+                cellPadding={0}
+                style={{ marginLeft: 0, borderWidth: "medium", borderStyle: "none", borderColor: "currentcolor" }}
+              >
+                <tbody>
+                  <tr>
+                    <td
+                      width={292}
+                      valign="top"
+                      style={{ width: "218.75pt", borderWidth: "1pt", borderColor: "windowtext", padding: "0cm 5.4pt" }}
+                    >
+                      <p style={{ marginBottom: 0, lineHeight: "normal" }}>
+                        <b>
+                          <span style={CALIBRI}>REGISTRATION OPTIONS</span>
+                        </b>
+                      </p>
                     </td>
-                    <td className="px-6 py-4 font-bold text-[#3124eb]">
-                      {row.fee}
+                    <td
+                      width={241}
+                      valign="top"
+                      style={{
+                        width: "180.6pt",
+                        borderWidth: "1pt 1pt 1pt medium",
+                        borderStyle: "solid solid solid none",
+                        borderColor: "windowtext windowtext windowtext currentcolor",
+                        padding: "0cm 5.4pt",
+                      }}
+                    >
+                      <p style={{ ...CELL_PARAGRAPH, textAlign: "center" }}>
+                        <b>
+                          <span style={CALIBRI}>FEES</span>
+                        </b>
+                      </p>
                     </td>
                   </tr>
-                ))}
+                  {REGISTRATION_FEES.map((row, index) => (
+                    <tr key={row.category}>
+                      <td width={292} valign="top" style={OPTION_CELL}>
+                        <p style={CELL_PARAGRAPH}>
+                          <span style={BODY_TEXT}>{row.category}</span>
+                        </p>
+                      </td>
+                      <td width={241} valign={index === 0 ? undefined : "top"} style={FEE_CELL}>
+                        <p style={{ ...CELL_PARAGRAPH, textAlign: "right" }}>
+                          <span style={BODY_TEXT}>{row.fee}</span>
+                        </p>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+              <p>
+                <span style={BODY_TEXT}>
+                  If an author has multiple accepted papers, each paper must be registered
+                  separately. Registration fees cover abstract booklet, conference
+                  materials, coffee breaks &amp; lunch during the conference and gala
+                  dinner. Transportation and accommodation are not included.{"\u00a0\u00a0"}
+                </span>
+              </p>
+            </h2>
+            <p />
+            <table
+              border={1}
+              cellSpacing={0}
+              cellPadding={0}
+              style={{ marginLeft: "54pt", borderWidth: "medium", borderStyle: "none", borderColor: "currentcolor" }}
+            >
+              <tbody>
+                <tr />
               </tbody>
             </table>
           </div>
-
-          {/* Registration Inclusions */}
-          <div className="rounded-xl border border-blue-100 bg-blue-50/40 p-6 space-y-3">
-            <h3 className="font-bold text-slate-900 text-sm flex items-center gap-2">
-              <Info className="h-4 w-4 text-[#3124eb]" />
-              Important Terms & Entitlements
-            </h3>
-            <ul className="space-y-2 text-xs sm:text-sm text-slate-700">
-              <li className="flex items-start gap-2">
-                <Check className="h-4 w-4 text-[#3124eb] shrink-0 mt-0.5" />
-                <span>If an author has multiple accepted papers, each paper must be registered separately.</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <Check className="h-4 w-4 text-[#3124eb] shrink-0 mt-0.5" />
-                <span>Registration fees cover abstract booklet, conference materials, coffee breaks & lunch during the conference, and the gala dinner.</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <Check className="h-4 w-4 text-slate-400 shrink-0 mt-0.5" />
-                <span>Transportation and accommodation are not included in the registration fee.</span>
-              </li>
-            </ul>
-          </div>
         </div>
-
-        {/* Venue Information */}
-        <div className="max-w-4xl space-y-4">
-          <h2 className="text-2xl font-bold tracking-tight text-slate-900">
-            Conference Venue & Location
-          </h2>
-          <div className="flex items-start gap-3 rounded-xl border border-slate-200 bg-white p-6 shadow-xs">
-            <MapPin className="h-6 w-6 text-[#3124eb] shrink-0 mt-1" />
-            <div>
-              <h3 className="font-bold text-lg text-slate-900">{CONFERENCE_INFO.venue}</h3>
-              <p className="mt-1 text-sm text-slate-600">
-                Organized by CMC University, Hanoi, Vietnam. Detailed venue building and transport directions will be communicated to registered authors and participants.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+      </section>
     </div>
   );
 }

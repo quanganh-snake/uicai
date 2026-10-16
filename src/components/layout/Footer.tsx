@@ -1,100 +1,66 @@
 import Link from "next/link";
-import { Mail } from "lucide-react";
 import { CONFERENCE_INFO } from "@/data/conference";
+
+const QUICK_LINKS = [
+  { href: "/icai-2026/program", label: "Program" },
+  { href: "/icai-2026/dates", label: "Dates" },
+  { href: "/icai-2026/authors", label: "Authors" },
+  { href: "/icai-2026/news", label: "News" },
+  { href: "/icai-2026/join", label: "Submission" },
+];
 
 export function Footer() {
   return (
     <footer
-      className="relative mt-12 overflow-hidden py-12 text-sm sm:mt-20 sm:py-16 text-slate-200"
-      style={{
-        backgroundColor: "rgba(4, 65, 130, 0.86)",
-      }}
+      className="relative mt-12 overflow-hidden py-12 text-sm text-[#efccd5] sm:mt-20 sm:py-16"
+      style={{ backgroundColor: "rgba(4, 65, 130, 0.86)" }}
     >
-      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-blue-400 to-transparent opacity-50" />
+      <div className="absolute top-0 left-0 h-1 w-full bg-gradient-to-r from-transparent via-blue-500 to-transparent opacity-50" />
       <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 px-4 sm:px-6 md:grid-cols-2 lg:grid-cols-4 lg:px-8">
         <div className="lg:col-span-2">
-          <h3 className="mb-4 text-xl font-bold tracking-tight text-white sm:text-2xl">
+          <h3 className="mb-5 text-xl font-bold tracking-tight sm:text-2xl">
             {CONFERENCE_INFO.name}
           </h3>
-          <p className="max-w-md text-xs sm:text-sm leading-relaxed text-blue-100/90 mb-6">
+          <p className="mb-6 max-w-md leading-relaxed">
             {CONFERENCE_INFO.description}
           </p>
         </div>
 
         <div>
-          <h4 className="font-semibold mb-5 uppercase tracking-wider text-xs text-blue-200">
+          <h4 className="mb-6 text-xs font-semibold uppercase tracking-wider">
             Quick Links
           </h4>
-          <ul className="space-y-2.5 text-sm">
-            <li>
-              <Link
-                href="/icai-2026/program"
-                className="text-blue-100/80 hover:text-white transition-colors"
-              >
-                Program
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/icai-2026/dates"
-                className="text-blue-100/80 hover:text-white transition-colors"
-              >
-                Dates
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/icai-2026/authors"
-                className="text-blue-100/80 hover:text-white transition-colors"
-              >
-                Authors
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/icai-2026/news"
-                className="text-blue-100/80 hover:text-white transition-colors"
-              >
-                News
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/icai-2026/join"
-                className="text-blue-100/80 hover:text-white transition-colors"
-              >
-                Submission
-              </Link>
-            </li>
+          <ul className="space-y-3">
+            {QUICK_LINKS.map((link) => (
+              <li key={link.href}>
+                <Link href={link.href} className="transition-colors hover:text-white">
+                  {link.label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
 
         <div>
-          <h4 className="font-semibold mb-5 uppercase tracking-wider text-xs text-blue-200">
+          <h4 className="mb-6 text-xs font-semibold uppercase tracking-wider">
             Contact Us
           </h4>
-          <ul className="space-y-4 text-sm">
+          <ul className="space-y-4">
             <li>
-              <span className="block text-xs text-blue-200/80 mb-0.5">
-                Academic Master
-              </span>
+              <span className="mb-1 block text-xs">Academic Master</span>
               <a
                 href={`mailto:${CONFERENCE_INFO.contactEmail}`}
-                className="flex items-center gap-1.5 text-blue-100 hover:text-white transition-colors font-medium"
+                className="transition-colors hover:text-white"
               >
-                <Mail className="h-3.5 w-3.5 text-blue-300" />
                 {CONFERENCE_INFO.contactEmail}
               </a>
             </li>
             <li>
-              <span className="block text-xs text-blue-200/80 mb-0.5">
-                Webmaster
-              </span>
+              <span className="mb-1 block text-xs">Webmaster</span>
               <a
                 href={`mailto:${CONFERENCE_INFO.webmasterEmail}`}
-                className="flex items-center gap-1.5 text-blue-100 hover:text-white transition-colors font-medium"
+                className="transition-colors hover:text-white"
               >
-                <Mail className="h-3.5 w-3.5 text-blue-300" />
                 {CONFERENCE_INFO.webmasterEmail}
               </a>
             </li>
@@ -102,10 +68,13 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="mx-auto mt-12 w-full max-w-7xl border-t border-white/10 px-4 pt-8 text-xs text-blue-200/80 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div className="mx-auto mt-12 flex w-full max-w-7xl flex-col items-center justify-between gap-4 border-t border-white/20 px-4 pt-8 text-center text-xs sm:px-6 md:flex-row md:text-left lg:px-8">
         <p>© 2026 AI-Native for Universities. All rights reserved.</p>
-        <p className="text-blue-200/70">
-          Powered by Digital University Division - CMC University
+        <p>
+          Powered by{" "}
+          <span className="font-medium">
+            Digital University Division - CMC University
+          </span>
         </p>
       </div>
     </footer>
