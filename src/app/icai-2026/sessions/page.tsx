@@ -14,9 +14,14 @@ export default function SessionsPage() {
                 key={track.title}
                 className="rounded-lg border border-slate-900 bg-white p-5 shadow-sm sm:p-6"
               >
-                <h2 className="text-xl font-bold text-slate-900">{track.title}</h2>
+                <h2 className="text-xl font-bold text-slate-900">
+                  {track.title}
+                </h2>
                 {track.description && (
-                  <p className="mt-4 text-slate-600">{track.description}</p>
+                  <div
+                    className="mt-4 text-slate-600"
+                    dangerouslySetInnerHTML={{ __html: track.description }}
+                  />
                 )}
                 {track.topics && (
                   <div className="mt-5 flex flex-wrap gap-2">

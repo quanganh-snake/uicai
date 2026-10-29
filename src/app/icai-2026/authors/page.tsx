@@ -1,17 +1,6 @@
 import { PageHeader } from "@/components/layout/PageHeader";
 import { CONFERENCE_INFO, TEMPLATES } from "@/data/conference";
-
-const IEEE_TEMPLATES_URL = "https://www.ieee.org/conferences/publishing/templates";
-
-const [wordTemplate, latexTemplate, overleafTemplate] = TEMPLATES;
-
-function ExternalLink({ href, children }: { href: string; children: React.ReactNode }) {
-  return (
-    <a href={href} target="_blank" rel="noopener noreferrer">
-      {children}
-    </a>
-  );
-}
+import Image from "next/image";
 
 export default function AuthorsPage() {
   return (
@@ -23,19 +12,11 @@ export default function AuthorsPage() {
           <div className="prose prose-slate max-w-none prose-headings:font-bold prose-a:transition-colors hover:prose-a:text-blue-600 sm:prose-lg">
             <h2>Submission Information</h2>
             <p>
-              Authors are invited to submit original, unpublished research papers,
-              review papers and application-oriented studies related to the conference
-              themes and parallel sessions. Submitted papers will be reviewed by the
-              Technical Program Committee.
+              Authors are invited to submit original, unpublished research papers, review papers, and application-oriented studies related to the conference theme and research areas of the International Conference on Artificial Intelligence, Engineering and Sustainable Innovation (AIESI 2027).
             </p>
+            <p>All submissions will be peer-reviewed</p>
             <p>
-              Conference website:{" "}
-              <ExternalLink href={CONFERENCE_INFO.websiteUrl}>
-                {CONFERENCE_INFO.websiteUrl}
-              </ExternalLink>
-            </p>
-            <p>
-              Contact email:{"\u00a0"}
+              <b>Submission Email:{"\u00a0"}</b>
               <a
                 href={`mailto:${CONFERENCE_INFO.contactEmail}`}
                 className="text-[12pt]"
@@ -45,70 +26,38 @@ export default function AuthorsPage() {
               </a>
             </p>
 
-            <h2>ICAI-FAI 2026 Paper Templates</h2>
+            <h2>AIESI 2027 Paper Template</h2>
             <p>
               <span className="text-[1rem]">
-                To ensure a consistent format for all submitted and accepted papers,
-                authors are required to prepare their manuscripts using the official
-                ICAI-FAI 2026 conference templates. The templates are prepared with
-                reference to the IEEE conference paper style and provide predefined
-                formatting for the paper title, author information, abstract, keywords,
-                section headings, figures, tables, references, and page layout.
+                To ensure consistent manuscript preparation, authors are encouraged to use the official <b>AIESI 2027 paper template</b>.
               </span>
+            </p>
+            <p>The template is available through the QR code below.</p>
+            <p>AIESI 2027 Paper Template</p>
+            <div className="relative aspect-square h-[320px] mx-auto overflow-hidden bg-slate-900 rounded-lg">
+                    <Image
+                      src={'/qr_scan_aiesi2027.jpg'}
+                      alt={'Scan QRCode AIESI 2027'}
+                      width={320}
+                      height={320}
+                      className="h-full w-full object-cover transition duration-500 !m-0 border-8 border-slate-800 rounded-lg"
+                      sizes="(min-width: 320px) 50vw, 100vw"
+                    />
+                  </div>
+            <p className="text-center">
+              <i>Scan the QR code to access the official paper template and related documents.</i>
+            </p>
+            <p>
+              Authors should follow the formatting instructions provided in the template when preparing their manuscripts.
             </p>
             <p>
               <span className="text-[1.5em] font-bold text-slate-900">
-                ICAI-FAI 2026 provides three template options for authors:
+                Peer Review & Publication:
               </span>
-            </p>
-            <ol>
-              <li>
-                <span className="text-[1rem]">
-                  {wordTemplate.name}: {wordTemplate.desc}:{"\u00a0"}
-                </span>
-                <span className="text-[1rem]">
-                  <ExternalLink href={wordTemplate.url}>{wordTemplate.linkLabel}</ExternalLink>
-                </span>
-              </li>
-              <li>
-                {latexTemplate.name}: {latexTemplate.desc}:{"\u00a0"}
-                <ExternalLink href={latexTemplate.url}>{latexTemplate.linkLabel}</ExternalLink>
-                ;{"\u00a0"}
-                <ExternalLink href={latexTemplate.extra.url}>
-                  {latexTemplate.extra.name}
-                </ExternalLink>
-              </li>
-              <li>
-                {overleafTemplate.name}: {overleafTemplate.desc}:{" "}
-                <ExternalLink href={overleafTemplate.url}>
-                  {overleafTemplate.linkLabel}
-                </ExternalLink>
-              </li>
-            </ol>
-            <p>
-              <span className="text-[1rem]">
-                Manuscripts should not exceed 8 pages, including tables, figures, notes,
-                and references.{"\u00a0"}
-              </span>
-              <span className="text-[1rem]">
-                Authors should not change the prescribed formatting, margins, font sizes,
-                or column layout of the templates. All instructional text in the template
-                must be removed before submission. Papers that do not follow the required
-                template may be returned to the authors for revision.{"\u00a0"}
-              </span>
-            </p>
-            <p>
-              For additional guidance on IEEE conference paper templates, authors may
-              refer to the official IEEE template page:{"\u00a0"}
-              <ExternalLink href={IEEE_TEMPLATES_URL}>{IEEE_TEMPLATES_URL}</ExternalLink>
-            </p>
-
-            <h2>Acknowledgement</h2>
-            <p>
-              The Microsoft CMT service was used for managing the peer-reviewing process
-              for this conference. This service was provided for free by Microsoft and
-              they bore all expenses, including costs for Azure cloud services as well as
-              for software development and support.
+              <br />
+              <span>All submitted papers will undergo peer review.</span>
+              <br />
+              <span>Selected papers will be published in the conference proceedings with an ISBN.</span>
             </p>
           </div>
         </div>

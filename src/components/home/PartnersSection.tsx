@@ -8,20 +8,20 @@ interface Partner {
 }
 
 const HOST_PARTNERS: Partner[] = [
-  { name: "CMC University", href: "https://cmcu.edu.vn/", logo: "/images/cmc-uni.png" },
+  { name: "University of Economics - Technology for Industries (UNETI), Vietnam", href: "https://uneti.edu.vn/", logo: "/images/LOGO_UNETI.ico" },
 ];
 
 const COOPERATION_PARTNERS: Partner[] = [
   {
-    name: "Steinbeis University - Schools of Next Practices",
-    href: "https://www.steinbeis-next.de/",
-    logo: "/images/steinbeis.svg",
+    name: "National Economics University (NEU), Vietnam",
+    href: "https://neu.edu.vn/",
+    logo: "/images/logo_NEU.png",
     role: "Co-organizer",
   },
   {
-    name: "Tsinghua University, Shenzhen International Graduate School (SIGS)",
-    href: "https://www.tsinghua.edu.cn/",
-    logo: "/images/tsinghua.jpg",
+    name: "Óbuda University, Hungary",
+    href: "https://uni-obuda.hu",
+    logo: "/images/logoUHungary.jpeg",
     role: "Co-organizer",
   },
 ];

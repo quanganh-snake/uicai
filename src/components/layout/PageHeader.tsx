@@ -13,7 +13,7 @@ export function PageHeader({
     <section className="relative flex min-h-[260px] items-center justify-center overflow-hidden bg-slate-950 px-4 py-14 text-center sm:min-h-[320px] sm:py-16">
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/banner.png"
+          src="/images/banner_uneti.png"
           alt="AI-Native for Universities conference banner"
           fill
           priority

@@ -32,164 +32,174 @@ export interface TrackTopic {
 
 export const CONFERENCE_INFO = {
   name: "The 2nd International Conference on AI: AI-Native for Universities and Industry",
-  shortName: "ICAI-2026",
-  formerName: "ICAI-FAI 2026",
+  shortName: "ICAI-2027",
+  formerName: "ICAI-FAI 2027",
   badgeSubtitle: "AI-Native for Universities",
   editionBadge: "2nd International Conference",
-  tagline: "Connecting research breakthroughs with responsible, real-world impact.",
-  date: "December 3, 2026",
+  tagline:
+    "Connecting research breakthroughs with responsible, real-world impact.",
+  date: "April 23, 2027",
   venue: "Hanoi, Vietnam",
   publication: "Conference proceedings with ISBN",
   forumType: "Research, education, business and industry",
   cmtUrl: "https://cmt3.research.microsoft.com/ICAIFAI2026/",
-  contactEmail: "icai@cmcu.edu.vn",
-  webmasterEmail: "du@cmcu.edu.vn",
-  websiteUrl: "https://icai.cmcu.edu.vn/",
+  contactEmail: "AIESI2027@uneti.edu.vn",
+  webmasterEmail: "AIESI2027@uneti.edu.vn",
+  websiteUrl: "https://aiesi2027.uneti.edu.vn/",
+  phone: "(+84) 24 3862 1504",
+  officialWebsite: "uneti.edu.vn",
   description:
-    "ICAI-FAI 2026 is the second international conference on Artificial Intelligence in the annual conference series organized by CMC University, in collaboration with Steinbeis University - Schools of Next Practices, Germany, and Tsinghua University, Shenzhen International Graduate School (SIGS), China. The conference provides an international forum for researchers, scholars, practitioners, policymakers and industry experts to present and discuss recent advances, emerging trends, impacts and practical applications of frontier AI.",
+    "The International Conference on Artificial Intelligence, Engineering and Sustainable Innovation (AIESI 2027) is co-organized by the University of Economics - Technology for Industries (UNETI), in collaboration with National Economics University (NEU) and Óbuda University (Hungary). The conference provides a prestigious international forum for researchers, scholars, practitioners, policymakers, and industry experts to present and discuss recent advances, emerging trends, interdisciplinary applications, and sustainable solutions across Artificial Intelligence, Advanced Engineering, Green Technologies, and the Digital Economy.",
 };
 
 export const MILESTONES: Milestone[] = [
   {
     id: "cfp",
     step: "00",
-    title: "Call for Papers",
-    date: "July 1, 2026",
+    title: "Call for Papers Announcement",
+    date: "November 01, 2026",
     badge: "other",
   },
   {
     id: "submission",
     step: "01",
-    title: "Full Paper Submission",
-    homeTitle: "Full paper submission",
-    date: "October 31, 2026",
+    title: "Full Paper Submission Deadline",
+    homeTitle: "Full Paper Submission Deadline",
+    date: "December 30, 2026",
     badge: "submission",
   },
   {
     id: "acceptance",
     step: "02",
     title: "Notification of Acceptance",
-    homeTitle: "Acceptance notification",
-    date: "November 10, 2026",
+    homeTitle: "Acceptance Notification",
+    date: "February 28, 2027",
     badge: "notification",
   },
   {
     id: "camera-ready",
     step: "03",
-    title: "Camera-ready Submission",
-    homeTitle: "Camera-ready deadline",
-    date: "November 20, 2026",
+    title: "Camera-Ready Submission",
+    homeTitle: "Camera-Ready Submission",
+    date: "March 30, 2027",
     badge: "camera-ready",
   },
   {
     id: "conference-day",
     step: "04",
     title: "Conference Date",
-    date: "December 3, 2026",
+    date: "April 23, 2027",
     badge: "conference",
   },
 ];
 
 export const SPEAKERS: Speaker[] = [
   {
-    id: "mario-vaupel",
-    name: "Prof. Mario Vaupel",
+    id: "rochet",
+    name: "Prof. André-Louis Rochet",
     role: "Speaker 01",
-    avatar: "/images/mario-vaupel.png",
-    affiliation: ["CEO, Founder of Steinbeis University - Schools of next Practices, Germany"],
+    avatar: "/images/keynote_stage/rochet.jpg",
+    affiliation: ["Directeur Innovation, Co-Fondateur TW3 Partners, France"],
     isKeynote: true,
   },
   {
-    id: "chun-yuan",
-    name: "Prof. Chun Yuan",
+    id: "GCKIM",
+    name: "Dr. Gyeng Chul Kim (GCKIM)",
     role: "Speaker 02",
-    avatar: "/images/chun-yuan.jpg",
-    affiliation: ["Professor at Tsinghua Shenzhen International Graduate School"],
+    avatar: "/images/keynote_stage/gyeng_chul_kim.jpg",
+    affiliation: [
+      "CEO VINA Enesol, Former KAIST Professor, Expert in South Korean Industrial Policy",
+    ],
+    isKeynote: true,
+  },
+  {
+    id: "tran-thi-hong-lien",
+    name: "Assoc. Prof. Dr. Tran Thi Hong Lien",
+    role: "Speaker 03",
+    avatar: "/images/keynote_stage/tran_thi_hong_lien.jpg",
+    affiliation: [
+      "University of Economics and Law, Vietnam National University Ho Chi Minh City (VNU-HCM)",
+    ],
     isKeynote: true,
   },
   {
     id: "tran-tho-dat",
     name: "Prof. Trần Thọ Đạt",
-    role: "Keynote Speakers and Organizing Committee",
+    role: "Speaker 04",
     avatar: "/images/tran-tho-dat.webp",
     affiliation: [
-      "Chairman of University's Academic Board, National Economics University",
-      "Chairman of Council of Science and Trainning, CMC University",
+      "Chairman of Academic Board - National Economics University",
+      "Chairman of Academic Board - CMC University; Chairman of AIESI 2027 Advisory Board",
     ],
+    isKeynote: true,
   },
   {
-    id: "nguyen-trung-chinh",
-    name: "Mr. Nguyễn Trung Chính",
-    role: "Keynote Speakers and Organizing Committee",
-    avatar: "/images/nguyen-trung-chinh.jpg",
+    id: "banh-tien-long",
+    name: "Prof. Dr. Banh Tien Long",
+    role: "Speaker 05",
+    avatar: "/images/keynote_stage/banh_tien_long.jpg",
     affiliation: [
-      "Chairman of CMC Corporation",
-      "Chairman of University Council, CMC University",
+      "President, The Vietnam Association for Science and Technology Editors, Vietnam",
     ],
-  },
-  {
-    id: "dang-minh-tuan",
-    name: "Dr. Đặng Minh Tuấn",
-    role: "Keynote Speakers and Organizing Committee",
-    avatar: "/images/dang-minh-tuan.png",
-    affiliation: [
-      "Senior Vice President of CMC Corporation",
-      "President of CMC Applied Technology institute",
-    ],
-  },
-  {
-    id: "nguyen-thanh-tung",
-    name: "Assoc. Prof. Nguyễn Thanh Tùng",
-    role: "Keynote Speakers and Organizing Committee",
-    avatar: "/images/nguyen-thanh-tung.jpg",
-    affiliation: [
-      "Executive Vice President of CMC Corpporation",
-      "President of CMC University",
-    ],
+    isKeynote: true,
   },
 ];
 
 export const RESEARCH_TRACKS: TrackTopic[] = [
   {
-    title: "Economics & Business Administration",
+    title:
+      "Artificial Intelligence, Information Technology, Electronics and Telecommunications",
     topics: [
-      "Global Trends and Future of AI",
-      "Digital Economy; Digital and Green Growth",
-      "Digital & AI Transformation in Organizations",
-      "AI Applications across Industries: Healthcare; Manufacturing; Agriculture; Education; etc.",
-      "Digital Trade & E-commerce; E-Logistics; E-Payment; E-Infrastructure; etc.",
-      "AI-Driven Enterprise: Leadership; Change Management; Operation Management; HRM; Risk Management; Fintech; Digital Marketing; Digital Sales; etc.",
-      "Entrepreneurship and Innovation in the AI Era",
-      "Ethics; Governance; and Policy for AI",
+      "Artificial Intelligence",
+      "Information Technology",
+      "Electronics and Telecommunications",
     ],
   },
   {
-    title: "Information Technology and Communications",
+    title:
+      "Mechanical Engineering, Mechatronics, Robotics, Automation and Smart Manufacturing",
     topics: [
-      "Deep Learning and Neural Networks",
-      "Machine Learning and Data Mining",
-      "Data Science",
-      "AI Applications",
-      "Natural Language Processing",
+      "Mechanical Engineering",
+      "Mechatronics and Robotics",
+      "Automation",
+      "Smart Manufacturing",
     ],
   },
   {
-    title: "Microelectronics and Telecommunications",
+    title:
+      "Advanced Materials, Energy, Green Technologies and Sustainable Development",
     topics: [
-      "Microelectronics and Telecommunications",
-      "Networking; IC/Chip design",
-      "IoT; AIoT devices",
+      "Advanced Materials",
+      "Energy",
+      "Green Technologies",
+      "Sustainable Development",
     ],
   },
   {
-    title: "Special Session: AI for Education",
-    description:
-      "The AI for Education Special Session will feature invited talks on the applications of AI in higher education, with contributions from Tsinghua University, Steinbeis University – Schools of Next Practices, and CMC University. The session will discuss how AI can support teaching, learning, assessment, academic administration, student support, and the transformation of universities in the AI era.",
+    title: "Digital Economy, Business Management, Education and Innovation",
+    topics: [
+      "Digital Economy",
+      "Business Management",
+      "Education",
+      "Innovation",
+    ],
   },
   {
-    title: "Special Activity: AI Technology Exhibition",
-    description:
-      "The exhibition will showcase practical AI technologies and real-world applications across industry, education, business management, information technology, microelectronics, and telecommunications, connecting researchers, enterprises, practitioners, and policymakers.",
+    title:
+      "Plenary Session: Artificial Intelligence, High-Tech Industry and Business Transformation",
+    description: `<p>The plenary session will feature keynote presentations addressing global trends in AI governance and ethics, high-tech and semiconductor ecosystems, and corporate governance and business model innovation in the AI era.</p>
+    <p>The session will bring together perspectives on Artificial Intelligence, industrial development, business transformation, and sustainable growth.</p>
+        `,
+  },
+  {
+    title:
+      "Panel Discussion: Bridging AI Innovation, High-Tech Industry, and Business Transformation for Sustainable Growth",
+    description: `
+      <p>The panel discussion will bring together experts from academia, industry, and policy-making to explore the intersection of AI innovation, high-tech industry development, and business transformation. The discussion will focus on strategies for leveraging AI to drive sustainable growth, enhance competitiveness, and address societal challenges.</p>
+      <p><b>Moderator:</b> Prof. Tran Tho Dat</p>
+      <p><b>Panelists:</b> Three keynote speakers and invited industry representatives and experts.
+</p>
+    `,
   },
 ];
 
@@ -241,27 +251,21 @@ export const REGISTRATION_FEES = [
 
 export const NEWS_ITEMS: NewsItem[] = [
   {
-    slug: "announcement",
-    title: "Announcement on the Conference Name Change",
-    date: "August 11, 2026",
-    isoDate: "2026-08-11",
+    slug: "call-for-papers-aiesi-2027",
+    title: "Call for Papers: AIESI 2027",
+    date: "November 1, 2026",
+    isoDate: "2026-11-01",
     excerpt:
-      "New official name: The Second International Conference on AI: AI-Native for Universities and Industry Abbreviation: ICAI-2026",
+      "The International Conference on Artificial Intelligence, Engineering and Sustainable Innovation – AIESI 2027 invites researchers, scholars, practitioners, educators, policymakers, and industry professionals to submit their research contributions.",
   },
   {
-    slug: "call-for-papers-icai-fai-2026",
-    title: "Call for Papers: ICAI-FAI 2026",
-    date: "June 1, 2026",
-    isoDate: "2026-06-01",
+    slug: "aiesi-2027-to-bring-together-international-experts-in-ai-engineering-and-sustainable-innovation",
+    title:
+      "AIESI 2027 to Bring Together International Experts in AI, Engineering and Sustainable Innovation",
+    date: "April 23, 2027",
+    isoDate: "2027-04-23",
     excerpt:
-      "ICAI-FAI 2026 invites original research papers, review papers and application-oriented studies on Frontier AI.",
-  },
-  {
-    slug: "deadline-extension",
-    title: "ICAI-2026 Deadline Extension",
-    date: "October 1, 2026",
-    isoDate: "2026-10-01",
-    excerpt: "Extension of Paper Submission Deadline – ICAI-2026",
+      "The International Conference on Artificial Intelligence, Engineering and Sustainable Innovation – AIESI 2027 will bring together researchers, scholars, practitioners, educators, policymakers, and industry experts for scholarly exchange, professional networking, and interdisciplinary discussions.",
   },
 ];
 

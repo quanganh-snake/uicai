@@ -64,6 +64,24 @@ export function Footer() {
                 {CONFERENCE_INFO.webmasterEmail}
               </a>
             </li>
+            <li>
+              <span className="mb-1 block text-xs">Telephone / Zalo / WhatsApp</span>
+              <a
+                href={`tel:${CONFERENCE_INFO.phone}`}
+                className="transition-colors hover:text-white"
+              >
+                {CONFERENCE_INFO.phone}
+              </a>
+            </li>
+            <li>
+              <span className="mb-1 block text-xs">Official Website</span>
+              <a
+                href={`https://${CONFERENCE_INFO.officialWebsite}`}
+                className="transition-colors hover:text-white"
+              >
+                {CONFERENCE_INFO.officialWebsite}
+              </a>
+            </li>
           </ul>
         </div>
       </div>
@@ -73,7 +91,7 @@ export function Footer() {
         <p>
           Powered by{" "}
           <span className="font-medium">
-            Digital University Division - CMC University
+            University of Economics - Technology for Industries (UNETI), Vietnam
           </span>
         </p>
       </div>

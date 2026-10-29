@@ -9,11 +9,10 @@ export function PublicationSection() {
             Publication
           </p>
           <h2 className="mt-3 text-3xl font-semibold leading-tight sm:text-4xl">
-            Proceedings and selected publication opportunities
+            Conference Proceedings with ISBN
           </h2>
           <p className="mt-5 max-w-3xl text-base leading-7 text-slate-300">
-            Selected high-quality papers recommended for JED, JABES, VJS and other
-            internationally recognized journals.
+            All submitted papers will undergo a double-blind peer-review process by the Technical Program Committee. Accepted and presented papers will be published in the official conference proceedings with an ISBN by a reputable publisher.
           </p>
         </div>
         <div className="rounded-lg border border-white/10 bg-white p-6 text-slate-950 shadow-2xl">

@@ -19,7 +19,7 @@ export function HeroSection() {
     <section className="relative isolate flex min-h-[calc(100svh-4rem)] items-stretch overflow-hidden bg-slate-950 px-4 py-14 text-white sm:min-h-[calc(100svh-5rem)] sm:px-6 sm:py-16 lg:px-8">
       <div className="absolute inset-0 -z-20">
         <Image
-          src="/images/banner.png"
+          src="/images/banner_uneti.png"
           alt="AI-Native for Universities conference banner"
           fill
           priority

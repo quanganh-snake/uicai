@@ -3,12 +3,14 @@ import { CONFERENCE_INFO } from "@/data/conference";
 
 const SCOPE_GROUPS = [
   {
-    title: "Themes / Parallel Sessions and Research Topics",
+    // title: "Themes / Parallel Sessions and Research Topics",
+    title: "Themes / Research Tracks",
     icon: Building2,
     items: [
-      "Economics & Business Administration",
-      "Information Technology and Communications",
-      "Microelectronics and Telecommunications",
+      "Artificial Intelligence, Information Technology, Electronics and Telecommunications",
+      "Mechanical Engineering, Mechatronics, Robotics, Automation and Smart Manufacturing",
+      "Advanced Materials, Energy, Green Technologies and Sustainable Development",
+      "Digital Economy, Business Management, Education and Innovation"
     ],
   },
   {

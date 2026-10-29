@@ -1,14 +1,28 @@
 import Image from "next/image";
-import { Building2, Cpu, GraduationCap, MicVocal, Sparkles } from "lucide-react";
+import {
+  Building2,
+  Cpu,
+  GraduationCap,
+  MicVocal,
+  Sparkles,
+} from "lucide-react";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { SPEAKERS } from "@/data/conference";
 
 const KEYNOTE_SPEAKERS = SPEAKERS.filter((speaker) => speaker.isKeynote);
 
 const STAGE_FACTS = [
-  { value: String(KEYNOTE_SPEAKERS.length), label: "Keynote speakers", icon: MicVocal },
-  { value: "AI Native for University", label: "Focus", icon: Cpu },
-  { value: "Global", label: "Forum", icon: GraduationCap },
+  {
+    value: String(KEYNOTE_SPEAKERS.length),
+    label: "Keynote speakers",
+    icon: MicVocal,
+  },
+  {
+    value: "Artificial Intelligence, Engineering and Sustainable Innovation",
+    label: "Conference Theme",
+    icon: Cpu,
+  },
+  { value: "International", label: "Forum", icon: GraduationCap },
 ];
 
 const VIEWPORT_SAFE_WIDTH = { maxWidth: "min(100%, calc(100vw - 2rem))" };
@@ -25,19 +39,22 @@ export default function KeynotesPage() {
             style={VIEWPORT_SAFE_WIDTH}
           >
             <div className="absolute inset-0 -z-10 bg-[linear-gradient(120deg,rgba(37,99,235,0.28),transparent_38%),linear-gradient(290deg,rgba(20,184,166,0.22),transparent_42%)]" />
-            <div className="absolute inset-0 -z-10 opacity-[0.14] [background-image:linear-gradient(rgba(255,255,255,0.26)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.26)_1px,transparent_1px)] [background-size:34px_34px]" />
+            <div className="absolute inset-0 -z-10 opacity-[0.14] bg-[linear-gradient(rgba(255,255,255,0.26)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.26)_1px,transparent_1px)] bg-size-[34px_34px]" />
             <div className="grid min-w-0 gap-7 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-end">
               <div className="min-w-0">
                 <p className="inline-flex items-center gap-2 rounded-md border border-cyan-300/20 bg-cyan-300/10 px-3 py-2 text-xs font-semibold uppercase tracking-wider text-cyan-100">
                   <Sparkles className="h-4 w-4" aria-hidden />
-                  AI keynote stage
+                  AIESI 2027 Keynote Stage
                 </p>
-                <h2 className="mt-5 max-w-3xl [overflow-wrap:anywhere] text-2xl font-semibold leading-tight sm:text-3xl lg:text-4xl">
-                  Research voices shaping the frontier of intelligent systems.
+                <h2 className="mt-5 max-w-3xl wrap-anywhere text-2xl font-semibold leading-tight sm:text-3xl lg:text-4xl">
+                  Research voices advancing Artificial Intelligence, Engineering
+                  and Sustainable Innovation.
                 </h2>
-                <p className="mt-4 max-w-3xl [overflow-wrap:anywhere] text-sm leading-7 text-slate-300 sm:text-base">
-                  Meet the invited speakers connecting fundamental AI research, applied
-                  technology, responsible deployment and cross-disciplinary innovation.
+                <p className="mt-4 max-w-3xl wrap-anywhere text-sm leading-7 text-slate-300 sm:text-base">
+                  Meet the invited speakers bringing together perspectives on
+                  Artificial Intelligence, advanced engineering, high-tech
+                  industries, business transformation, and sustainable
+                  development.
                 </p>
               </div>
               <div className="grid min-w-0 gap-3 sm:grid-cols-3 lg:grid-cols-1">
@@ -50,10 +67,10 @@ export default function KeynotesPage() {
                       <Icon className="h-5 w-5" aria-hidden />
                     </div>
                     <div className="min-w-0">
-                      <p className="[overflow-wrap:anywhere] text-lg font-semibold leading-6 text-white">
+                      <p className="wrap-anywhere text-lg font-semibold leading-6 text-white">
                         {value}
                       </p>
-                      <p className="mt-1 [overflow-wrap:anywhere] text-xs font-medium uppercase tracking-wider text-slate-400">
+                      <p className="mt-1 wrap-anywhere text-xs font-medium uppercase tracking-wider text-slate-400">
                         {label}
                       </p>
                     </div>
@@ -97,7 +114,10 @@ export default function KeynotesPage() {
                             key={item}
                             className="mt-2 flex gap-2 text-sm font-medium leading-6 text-blue-700"
                           >
-                            <Building2 className="mt-0.5 h-4 w-4 shrink-0" aria-hidden />
+                            <Building2
+                              className="mt-0.5 h-4 w-4 shrink-0"
+                              aria-hidden
+                            />
                             <span>{item}</span>
                           </p>
                         ))}

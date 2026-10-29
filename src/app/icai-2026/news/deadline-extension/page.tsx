@@ -32,7 +32,7 @@ export default function DeadlineExtensionPage() {
         This extension provides authors with additional time to complete and polish their
         manuscripts for submission. We warmly invite researchers, academics, and
         professionals to submit their papers and join us for this exciting event, which
-        will take place on <b>December 3, 2026 </b>in <b>Hanoi, Vietnam</b>.
+        will take place on <b>April 23, 2027 </b>in <b>Hanoi, Vietnam</b>.
       </p>
       {KEY_DATES.map(({ label, date }) => (
         <p key={label}>
@@ -50,7 +50,7 @@ export default function DeadlineExtensionPage() {
       </p>
       <p>We look forward to your valuable contributions!</p>
       <p>
-        <b>Organizing Committee – ICAI-2026</b>
+        <b>Organizing Committee – ICAI-2027</b>
       </p>
     </NewsArticle>
   );
