@@ -1,5 +1,4 @@
 import { PageHeader } from "@/components/layout/PageHeader";
-import { CONFERENCE_INFO } from "@/data/conference";
 
 const PROGRAM_DAYS = [
   {
@@ -97,7 +96,7 @@ export default function ProgramPage() {
                 <div className="space-y-3">
                   {track.items.map((item, index) => (
                     <div
-                      key={item.id}
+                      key={item}
                       className="grid grid-cols-1 gap-4 rounded-lg border border-slate-900 bg-white p-5 shadow-sm md:grid-cols-[180px_1fr]"
                     >
                       <div className="font-semibold text-blue-600">Track {index + 1}</div>
