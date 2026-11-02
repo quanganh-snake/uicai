@@ -18,17 +18,20 @@ const PROGRAM_DAYS = [
       {
         time: "08:50 - 09:20",
         content: `Keynote 1: "Global Trends in AI Governance, Ethics, and Interdisciplinary Applications for Sustainable Development"`,
-        speaker: "Prof. André-Louis Rochet (Directeur Innovation, Co-Fondateur TW3 Partners, France)",
+        speaker:
+          "Prof. André-Louis Rochet (Innovation Director and Co-Founder, TW3 Partners, France, and Professor at ECE Paris)",
       },
       {
         time: "09:20 - 09:50",
         content: `Keynote 2: "Building High-Tech, Semiconductor & AI Ecosystems: Lessons from South Korea's Industrial Policy for Vietnam"`,
-        speaker: "Dr. Gyeng Chul Kim (GCKIM) (CEO VINA Enesol, Former KAIST Professor)",
+        speaker:
+          "Dr. Gyeng Chul Kim (GCKIM) (CEO VINA Enesol, Former KAIST Professor)",
       },
       {
         time: "09:50 - 10:20",
         content: `Keynote 3: "Corporate Governance and Business Model Innovation in the AI Era: Strategic Imperatives for Vietnamese Enterprises"`,
-        speaker: "Assoc. Prof. Dr. Tran Thi Hong Lien (University of Economics and Law, VNU-HCM)",
+        speaker:
+          "Assoc. Prof. Dr. Tran Thi Hong Lien (University of Economics and Law, VNU-HCM)",
       },
       {
         time: "10:20 - 10:35",
@@ -38,7 +41,8 @@ const PROGRAM_DAYS = [
       {
         time: "10:35 - 11:45",
         content: `Panel Discussion: "Bridging AI Innovation, High-Tech Industry, and Business Transformation for Sustainable Growth"`,
-        speaker: "Moderator: Prof. Tran Tho Dat (NEU) - Panelists: Keynote Speakers & Industry Experts",
+        speaker:
+          "Moderator: Prof. Tran Tho Dat (NEU) - Panelists: Keynote Speakers & Industry Experts",
       },
       {
         time: "11:45 - 12:00",
@@ -53,14 +57,15 @@ const PARALLEL_TRACKS = [
   {
     id: 1,
     title: "Parallel Sessions (Afternoon - April 23, 2027)",
+    time: "13:30 - 16:30",
     items: [
       "Artificial Intelligence, Information Technology, Electronics and Telecommunications.",
       "Mechanical Engineering, Mechatronics, Robotics, Automation and Smart Manufacturing.",
       "Advanced Materials, Energy, Green Technologies and Sustainable Development.",
-      "Digital Economy, Business Management, Education and Innovation."
-    ]
-  }
-]
+      "Digital Economy, Business Management, Education and Innovation.",
+    ],
+  },
+];
 export default function ProgramPage() {
   return (
     <div className="min-h-screen bg-slate-50">
@@ -71,16 +76,22 @@ export default function ProgramPage() {
           <div className="space-y-8">
             {PROGRAM_DAYS.map((day) => (
               <section key={day.id}>
-                <h2 className="mb-4 text-2xl font-bold text-slate-900">{day.title}</h2>
+                <h2 className="mb-4 text-2xl font-bold text-slate-900">
+                  {day.title}
+                </h2>
                 <div className="space-y-3">
                   {day.items.map((item) => (
                     <div
                       key={item.content}
                       className="grid grid-cols-1 gap-4 rounded-lg border border-slate-900 bg-white p-5 shadow-sm md:grid-cols-[180px_1fr]"
                     >
-                      <div className="font-semibold text-blue-600">{item.time}</div>
+                      <div className="font-semibold text-blue-600">
+                        {item.time}
+                      </div>
                       <div>
-                        <h3 className="text-lg font-bold text-slate-900">{item.content}</h3>
+                        <h3 className="text-lg font-bold text-slate-900">
+                          {item.content}
+                        </h3>
                         <p className="mt-3 text-slate-600">{item.speaker}</p>
                       </div>
                     </div>
@@ -92,16 +103,23 @@ export default function ProgramPage() {
           <div className="space-y-8">
             {PARALLEL_TRACKS.map((track) => (
               <section key={track.id}>
-                <h2 className="mb-4 text-2xl font-bold text-slate-900">{track.title}</h2>
+                <h2 className="mb-4 text-2xl font-bold text-slate-900">
+                  {track.title}
+                </h2>
                 <div className="space-y-3">
                   {track.items.map((item, index) => (
                     <div
                       key={item}
                       className="grid grid-cols-1 gap-4 rounded-lg border border-slate-900 bg-white p-5 shadow-sm md:grid-cols-[180px_1fr]"
                     >
-                      <div className="font-semibold text-blue-600">Track {index + 1}</div>
+                      <div className="font-semibold text-blue-600">
+                        {track.time}
+                      </div>
                       <div>
-                        <h3 className="text-lg font-bold text-slate-900">{item}</h3>
+                        <h3 className="text-lg font-bold text-slate-900">
+                          Track {index + 1}
+                        </h3>
+                        <p className="mt-3 text-slate-600">{item}</p>
                       </div>
                     </div>
                   ))}

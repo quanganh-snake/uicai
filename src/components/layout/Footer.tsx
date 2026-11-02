@@ -15,13 +15,13 @@ export function Footer() {
       className="relative mt-12 overflow-hidden py-12 text-sm text-[#efccd5] sm:mt-20 sm:py-16"
       style={{ backgroundColor: "rgba(4, 65, 130, 0.86)" }}
     >
-      <div className="absolute top-0 left-0 h-1 w-full bg-gradient-to-r from-transparent via-blue-500 to-transparent opacity-50" />
+      <div className="absolute top-0 left-0 h-1 w-full bg-linear-to-r from-transparent via-blue-500 to-transparent opacity-50" />
       <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 px-4 sm:px-6 md:grid-cols-2 lg:grid-cols-4 lg:px-8">
         <div className="lg:col-span-2">
           <h3 className="mb-5 text-xl font-bold tracking-tight sm:text-2xl">
             {CONFERENCE_INFO.name}
           </h3>
-          <p className="mb-6 max-w-md leading-relaxed">
+          <p className="mb-6 max-w-md leading-relaxed text-justify">
             {CONFERENCE_INFO.description}
           </p>
         </div>
@@ -33,7 +33,10 @@ export function Footer() {
           <ul className="space-y-3">
             {QUICK_LINKS.map((link) => (
               <li key={link.href}>
-                <Link href={link.href} className="transition-colors hover:text-white">
+                <Link
+                  href={link.href}
+                  className="transition-colors hover:text-white"
+                >
                   {link.label}
                 </Link>
               </li>
@@ -65,7 +68,9 @@ export function Footer() {
               </a>
             </li>
             <li>
-              <span className="mb-1 block text-xs">Telephone / Zalo / WhatsApp</span>
+              <span className="mb-1 block text-xs">
+                Telephone / Zalo / WhatsApp
+              </span>
               <a
                 href={`tel:${CONFERENCE_INFO.phone}`}
                 className="transition-colors hover:text-white"

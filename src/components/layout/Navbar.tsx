@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import {
   Sheet,
@@ -10,6 +10,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
   { href: "/icai-2026/proceedings", label: "Proceedings" },
@@ -26,7 +27,9 @@ const NAV_LINKS = [
 const NAV_BACKGROUND = "rgba(4, 65, 130, 0.85)";
 
 export function Navbar() {
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = React.useState(false);
+  const isSubmissionActive = pathname === "/icai-2026/join";
 
   return (
     <header
@@ -36,34 +39,46 @@ export function Navbar() {
       <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between gap-3 px-4 sm:h-20 sm:px-6 lg:px-8">
         <Link
           href="/icai-2026"
-          className="flex min-w-0 flex-1 items-center gap-3 xl:flex-none"
-          aria-label="The 2nd International Conference on AI: AI-Native for Universities and Industry home"
+          className="flex min-h-10 min-w-0 flex-1 items-center xl:flex-none"
+          aria-label="AIESI 2027 home"
         >
-          <span className="relative h-10 w-24 shrink-0 sm:h-12 sm:w-36">
-            <Image
-              src="/images/logo.png"
-              alt="The 2nd International Conference on AI: AI-Native for Universities and Industry logo"
-              fill
-              priority
-              className="object-contain object-left"
-              sizes="(min-width: 640px) 144px, 96px"
-            />
+          <span className="inline-flex shrink-0 items-baseline whitespace-nowrap">
+            <span className="bg-linear-to-r from-white via-cyan-100 to-teal-200 bg-clip-text text-2xl font-black italic leading-none tracking-[-0.055em] text-transparent sm:text-3xl">
+              AIESI
+            </span>
+            <span className="ml-2 bg-linear-to-r from-cyan-100 to-teal-200 bg-clip-text text-xl font-extrabold leading-none tracking-[0.08em] text-transparent sm:text-2xl">
+              2027
+            </span>
           </span>
         </Link>
 
         <nav className="hidden min-w-0 items-center gap-3 xl:flex 2xl:gap-5">
-          {NAV_LINKS.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="shrink-0 text-sm font-medium text-white transition-colors hover:text-blue-200"
-            >
-              {link.label}
-            </Link>
-          ))}
+          {NAV_LINKS.map((link) => {
+            const isActive = pathname === link.href;
+
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                aria-current={isActive ? "page" : undefined}
+                className={cn(
+                  "shrink-0 text-sm font-medium transition-colors hover:text-blue-200",
+                  isActive
+                    ? "text-blue-200 underline decoration-2 underline-offset-8"
+                    : "text-white",
+                )}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
           <Link
             href="/icai-2026/join"
-            className="shrink-0 rounded-full bg-[#3124eb] px-5 py-2.5 text-sm font-semibold text-white shadow-md transition hover:shadow-lg"
+            aria-current={isSubmissionActive ? "page" : undefined}
+            className={cn(
+              "shrink-0 rounded-full bg-[#3124eb] px-5 py-2.5 text-sm font-semibold text-white shadow-md transition hover:shadow-lg",
+              isSubmissionActive && "ring-2 ring-white/80",
+            )}
           >
             Submission
           </Link>
@@ -88,20 +103,34 @@ export function Navbar() {
           >
             <SheetTitle className="sr-only">Navigation</SheetTitle>
             <nav className="mx-auto flex max-h-[calc(100vh-5rem)] w-full max-w-3xl flex-col gap-1 overflow-y-auto sm:max-h-[calc(100vh-6rem)]">
-              {NAV_LINKS.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="flex min-h-12 items-center rounded-lg px-3 text-base font-medium text-white transition hover:bg-white/10"
-                >
-                  {link.label}
-                </Link>
-              ))}
+              {NAV_LINKS.map((link) => {
+                const isActive = pathname === link.href;
+
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    aria-current={isActive ? "page" : undefined}
+                    onClick={() => setIsOpen(false)}
+                    className={cn(
+                      "flex min-h-12 items-center rounded-lg px-3 text-base font-medium transition hover:bg-white/10",
+                      isActive
+                        ? "bg-white/10 text-blue-200"
+                        : "text-white",
+                    )}
+                  >
+                    {link.label}
+                  </Link>
+                );
+              })}
               <Link
                 href="/icai-2026/join"
+                aria-current={isSubmissionActive ? "page" : undefined}
                 onClick={() => setIsOpen(false)}
-                className="mt-2 flex min-h-12 items-center justify-center rounded-full bg-[#3124eb] px-5 text-center text-sm font-semibold text-white shadow-md"
+                className={cn(
+                  "mt-2 flex min-h-12 items-center justify-center rounded-full bg-[#3124eb] px-5 text-center text-sm font-semibold text-white shadow-md",
+                  isSubmissionActive && "ring-2 ring-white/80",
+                )}
               >
                 Submission
               </Link>

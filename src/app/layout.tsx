@@ -7,6 +7,7 @@ import { Footer } from "@/components/layout/Footer";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  style: ["normal", "italic"],
 });
 
 const geistMono = Geist_Mono({
@@ -16,17 +17,19 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://icai.cmcu.edu.vn"),
-  title: "The 2nd International Conference on AI: AI-Native for Universities and Industry | ICAI",
+  title:
+    "The 2nd International Conference on AI: AI-Native for Universities and Industry | ICAI",
   description:
     "ICAI-FAI 2026 is the second international conference on Artificial Intelligence in the annual conference series organized by CMC University, in collaboration with Steinbeis University - Schools of Next Practices, Germany, and Tsinghua University, Shenzhen International Graduate School (SIGS), China.",
   icons: {
     icon: "/favicon.ico",
   },
   openGraph: {
-    title: "The 2nd International Conference on AI: AI-Native for Universities and Industry",
+    title:
+      "The 2nd International Conference on AI: AI-Native for Universities and Industry",
     description:
       "ICAI-FAI 2026 is the second international conference on Artificial Intelligence in the annual conference series organized by CMC University, in collaboration with Steinbeis University and Tsinghua University SIGS.",
-    images: ["/images/banner.png"],
+    images: ["/images/bannerv1.png"],
     type: "website",
   },
 };
@@ -49,5 +52,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-

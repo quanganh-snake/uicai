@@ -19,7 +19,7 @@ export default function SessionsPage() {
                 </h2>
                 {track.description && (
                   <div
-                    className="mt-4 text-slate-600"
+                    className="mt-4 text-slate-600 text-justify"
                     dangerouslySetInnerHTML={{ __html: track.description }}
                   />
                 )}

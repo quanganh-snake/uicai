@@ -10,10 +10,10 @@ export function PageHeader({
   badge = "AI-Native for Universities",
 }: PageHeaderProps) {
   return (
-    <section className="relative flex min-h-[260px] items-center justify-center overflow-hidden bg-slate-950 px-4 py-14 text-center sm:min-h-[320px] sm:py-16">
+    <section className="relative flex min-h-65 items-center justify-center overflow-hidden bg-slate-950 px-4 py-14 text-center sm:min-h-80 sm:py-16">
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/banner_uneti.png"
+          src="/images/bannerv1.png"
           alt="AI-Native for Universities conference banner"
           fill
           priority
@@ -22,10 +22,10 @@ export function PageHeader({
         />
         <div
           className="absolute inset-0"
-          style={{ backgroundColor: "#e9f782", opacity: 0.04 }}
+          style={{ backgroundColor: "#000000", opacity: 0.25 }}
         />
       </div>
-      <div className="absolute inset-0 z-0 opacity-[0.16] [background-image:linear-gradient(rgba(255,255,255,0.22)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.22)_1px,transparent_1px)] [background-size:42px_42px]" />
+      <div className="absolute inset-0 z-0 opacity-[0.16] bg-[linear-gradient(rgba(255,255,255,0.22)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.22)_1px,transparent_1px)] bg-size-[42px_42px]" />
 
       <div className="relative z-10 max-w-4xl animate-in fade-in slide-in-from-bottom-8 duration-700">
         <div className="mb-5 inline-block max-w-full rounded-full border border-blue-500/20 bg-blue-500/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-blue-300 backdrop-blur-md sm:px-4 sm:text-sm sm:tracking-widest">

@@ -31,7 +31,7 @@ export default function RegistrationFeesPage() {
       <section className="px-4 py-12 sm:py-16 lg:py-20">
         <div className="mx-auto w-full min-w-0 max-w-5xl">
           <div className="prose prose-slate max-w-none rounded-xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5">
-            <h2 style={{ marginLeft: 0 }}>
+            <h2 className="ml-0! text-justify">
               <p>
                 <span style={BODY_TEXT}>
                   AIESI 2027 welcomes researchers, scholars, practitioners,

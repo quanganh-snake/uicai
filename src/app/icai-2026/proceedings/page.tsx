@@ -12,10 +12,18 @@ export default function ProceedingsPage() {
             <h2 className="!mb-2">Publication & Peer Review</h2>
             <ul>
               <li>
-                <b>Publication:</b> <span>All accepted and presented papers will be published in the conference proceedings with an ISBN.</span>
+                <b>Publication:</b>{" "}
+                <span>
+                  All accepted and presented papers will be published in the
+                  conference proceedings with an ISBN.
+                </span>
               </li>
               <li>
-                <b>Peer Review:</b> <span>All submitted papers will undergo a rigorous double-blind peer-review process by the Technical Program Committee.</span>
+                <b>Peer Review:</b>{" "}
+                <span>
+                  All submitted papers will undergo a rigorous double-blind
+                  peer-review process by the Technical Program Committee.
+                </span>
               </li>
               <li>
                 <b>Language:</b> <span>English.</span>
@@ -24,16 +32,33 @@ export default function ProceedingsPage() {
           </div>
           {/** */}
           <div className="prose prose-slate max-w-none prose-headings:font-bold prose-a:transition-colors hover:prose-a:text-blue-600 sm:prose-lg">
-            <h2 className="!mb-2">Submission Guidelines</h2>
+            <h2 className="mb-2!">Submission Guidelines</h2>
             <ul>
               <li>
-                <b>Paper Types:</b> <span>Original, unpublished research papers, review papers, and application-oriented studies related to the conference themes.</span>
+                <b>Paper Types:</b>{" "}
+                <span>
+                  Original, unpublished research papers, review papers, and
+                  application-oriented studies related to the conference themes.
+                </span>
               </li>
               <li>
-                <b>Submission Method:</b> <span>Email your full paper directly to AIESI2027@uneti.edu.vn</span>
+                <b>Submission Method:</b>{" "}
+                <span>
+                  Email your full paper directly to{" "}
+                  <a
+                    href="mailto:AIESI2027@uneti.edu.vn"
+                    className="text-blue-600 hover:text-blue-800"
+                  >
+                    AIESI2027@uneti.edu.vn
+                  </a>
+                </span>
               </li>
               <li>
-                <b>Paper Template:</b> <span>Scan the official QR code or download the template from the conference website.</span>
+                <b>Paper Template:</b>{" "}
+                <span>
+                  Scan the official QR code or download the template from the
+                  conference website.
+                </span>
               </li>
             </ul>
           </div>

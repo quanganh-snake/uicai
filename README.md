@@ -1,4 +1,6 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AIESI 2027 Conference Website
+
+Next.js website for the International Conference on Artificial Intelligence, Engineering and Sustainable Innovation (AIESI 2027).
 
 ## Getting Started
 
@@ -14,11 +16,9 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000/icai-2026](http://localhost:3000/icai-2026) to view the conference website.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The shared header, including the AIESI 2027 wordmark, is implemented in `src/components/layout/Navbar.tsx`. Global brand colors and typography live in `src/app/globals.css`.
 
 ## Learn More
 

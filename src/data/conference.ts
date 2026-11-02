@@ -31,15 +31,15 @@ export interface TrackTopic {
 }
 
 export const CONFERENCE_INFO = {
-  name: "The 2nd International Conference on AI: AI-Native for Universities and Industry",
-  shortName: "ICAI-2027",
-  formerName: "ICAI-FAI 2027",
-  badgeSubtitle: "AI-Native for Universities",
-  editionBadge: "2nd International Conference",
+  name: "The International Conference on Artificial Intelligence, Engineering and Sustainable Innovation (AIESI 2027)",
+  shortName: "AIESI 2027",
+  formerName: "AIESI 2027",
+  badgeSubtitle: "AIESI 2027",
+  editionBadge: "International Conference",
   tagline:
     "Connecting research breakthroughs with responsible, real-world impact.",
   date: "April 23, 2027",
-  venue: "Hanoi, Vietnam",
+  venue: "University of Economics - Technology for Industries, Hanoi, Vietnam",
   publication: "Conference proceedings with ISBN",
   forumType: "Research, education, business and industry",
   cmtUrl: "https://cmt3.research.microsoft.com/ICAIFAI2026/",
@@ -99,7 +99,9 @@ export const SPEAKERS: Speaker[] = [
     name: "Prof. André-Louis Rochet",
     role: "Speaker 01",
     avatar: "/images/keynote_stage/rochet.jpg",
-    affiliation: ["Directeur Innovation, Co-Fondateur TW3 Partners, France"],
+    affiliation: [
+      "Innovation Director and Co-Founder, TW3 Partners, France, and Professor at ECE Paris",
+    ],
     isKeynote: true,
   },
   {
@@ -128,8 +130,7 @@ export const SPEAKERS: Speaker[] = [
     role: "Speaker 04",
     avatar: "/images/tran-tho-dat.webp",
     affiliation: [
-      "Chairman of Academic Board - National Economics University",
-      "Chairman of Academic Board - CMC University; Chairman of AIESI 2027 Advisory Board",
+      "Chairman of Academic Board, National Economics University, Hanoi",
     ],
     isKeynote: true,
   },

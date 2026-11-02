@@ -24,16 +24,17 @@ export default function Aiesi2027InternationalExpertsPage() {
   return (
     <NewsArticle slug="aiesi-2027-to-bring-together-international-experts-in-ai-engineering-and-sustainable-innovation">
       <p>
-        Scheduled for April 23, 2027, at the University of Economics – Technology for
-        Industries (UNETI), Hanoi, Vietnam, the conference will address research
-        developments and emerging applications in Artificial Intelligence, advanced
-        engineering, green technologies, and the digital economy.
+        Scheduled for April 23, 2027, at the University of Economics –
+        Technology for Industries (UNETI), Hanoi, Vietnam, the conference will
+        address research developments and emerging applications in Artificial
+        Intelligence, advanced engineering, green technologies, and the digital
+        economy.
       </p>
 
       <h2>Conference Programme</h2>
       <p>
-        The draft conference programme features keynote presentations, a plenary panel
-        discussion, and afternoon parallel sessions.
+        The draft conference programme features keynote presentations, a plenary
+        panel discussion, and afternoon parallel sessions.
       </p>
       <p>
         Three keynote presentations are currently included in the draft plenary
@@ -50,16 +51,17 @@ export default function Aiesi2027InternationalExpertsPage() {
       <p>The draft programme also includes a panel discussion entitled:</p>
       <p>
         <strong>
-          Bridging AI Innovation, High-Tech Industry, and Business Transformation for
-          Sustainable Growth
+          Bridging AI Innovation, High-Tech Industry, and Business
+          Transformation for Sustainable Growth
         </strong>
       </p>
       <p>
         <strong>Moderator:</strong> Prof. Tran Tho Dat
       </p>
       <p>
-        The discussion will address interdisciplinary connections among Artificial
-        Intelligence, high-tech industries, energy policy, and business transformation.
+        The discussion will address interdisciplinary connections among
+        Artificial Intelligence, high-tech industries, energy policy, and
+        business transformation.
       </p>
       <p>The conference programme remains subject to confirmation.</p>
 
@@ -69,8 +71,8 @@ export default function Aiesi2027InternationalExpertsPage() {
           <strong>Date:</strong> April 23, 2027
         </li>
         <li>
-          <strong>Venue:</strong> University of Economics – Technology for Industries
-          (UNETI), Hanoi, Vietnam
+          <strong>Venue:</strong> University of Economics – Technology for
+          Industries (UNETI), Hanoi, Vietnam
         </li>
         <li>
           <strong>Contact:</strong>{" "}

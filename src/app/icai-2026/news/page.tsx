@@ -27,7 +27,7 @@ export default function NewsPage() {
                     dangerouslySetInnerHTML={{
                       __html: item.excerpt,
                     }}
-                    className="mt-3 line-clamp-3 text-slate-600"
+                    className="mt-3 line-clamp-3 text-slate-600 text-justify"
                   />
                 </div>
               </Link>

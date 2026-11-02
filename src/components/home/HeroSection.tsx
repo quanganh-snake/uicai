@@ -19,7 +19,7 @@ export function HeroSection() {
     <section className="relative isolate flex min-h-[calc(100svh-4rem)] items-stretch overflow-hidden bg-slate-950 px-4 py-14 text-white sm:min-h-[calc(100svh-5rem)] sm:px-6 sm:py-16 lg:px-8">
       <div className="absolute inset-0 -z-20">
         <Image
-          src="/images/banner_uneti.png"
+          src="/images/bannerv1.png"
           alt="AI-Native for Universities conference banner"
           fill
           priority
@@ -28,10 +28,10 @@ export function HeroSection() {
         />
         <div
           className="absolute inset-0"
-          style={{ backgroundColor: "#e9f782", opacity: 0.04 }}
+          style={{ backgroundColor: "#000000", opacity: 0.25 }}
         />
       </div>
-      <div className="absolute inset-0 -z-10 opacity-[0.18] [background-image:linear-gradient(rgba(255,255,255,0.18)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.18)_1px,transparent_1px)] [background-size:44px_44px]" />
+      <div className="absolute inset-0 -z-10 opacity-[0.18] bg-[linear-gradient(rgba(255,255,255,0.18)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.18)_1px,transparent_1px)] bg-size-[44px_44px]" />
 
       <div className="mx-auto grid w-full max-w-7xl gap-10 lg:grid-cols-[minmax(0,1fr)_23rem]">
         <div className="max-w-4xl lg:order-1 lg:self-start">

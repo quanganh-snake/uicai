@@ -33,7 +33,10 @@ const IMPORTANT_NOTES = [
   "Selected papers will be published in the conference proceedings with an ISBN.",
   <>
     For inquiries regarding paper submissions, please contact{" "}
-    <a href={`mailto:${CONFERENCE_INFO.contactEmail}`}>{CONFERENCE_INFO.contactEmail}</a>.
+    <a href={`mailto:${CONFERENCE_INFO.contactEmail}`}>
+      {CONFERENCE_INFO.contactEmail}
+    </a>
+    .
   </>,
 ];
 
@@ -45,8 +48,8 @@ function IndentedItem({
   children: React.ReactNode;
 }) {
   return (
-    <p className="ml-[60.6pt] -indent-[18pt]">
-      <span className="inline-block w-[18pt] indent-0 text-[10pt]">{marker}</span>
+    <p className="ml-[60.6pt] -indent-6">
+      <span className="inline-block w-6 indent-0 text-[10pt]">{marker}</span>
       {children}
     </p>
   );
@@ -66,11 +69,13 @@ export default function SubmissionPage() {
                   <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-200">
                     Submission
                   </p>
-                  <h2 className="mt-2 text-2xl font-bold text-white sm:text-3xl">Open</h2>
+                  <h2 className="mt-2 text-2xl font-bold text-white sm:text-3xl">
+                    Open
+                  </h2>
                 </div>
                 <a
                   href={`mailto:${CONFERENCE_INFO.contactEmail}`}
-                  className="inline-flex min-h-[52px] w-full animate-pulse items-center justify-center rounded-full border border-orange-100/80 bg-gradient-to-r from-orange-500 via-amber-400 to-yellow-300 px-8 py-4 text-center text-base font-extrabold text-slate-950 shadow-[0_0_0_6px_rgba(251,146,60,0.18),0_18px_38px_rgba(249,115,22,0.7)] transition-all duration-300 hover:-translate-y-1 hover:scale-[1.03] hover:shadow-[0_0_0_8px_rgba(251,146,60,0.22),0_22px_44px_rgba(234,88,12,0.78)] focus:outline-none focus:ring-4 focus:ring-orange-300/80 sm:w-auto"
+                  className="inline-flex min-h-13 w-full animate-pulse items-center justify-center rounded-full border border-orange-100/80 bg-linear-to-r from-orange-500 via-amber-400 to-yellow-300 px-8 py-4 text-center text-base font-extrabold text-slate-950 shadow-[0_0_0_6px_rgba(251,146,60,0.18),0_18px_38px_rgba(249,115,22,0.7)] transition-all duration-300 hover:-translate-y-1 hover:scale-[1.03] hover:shadow-[0_0_0_8px_rgba(251,146,60,0.22),0_22px_44px_rgba(234,88,12,0.78)] focus:outline-none focus:ring-4 focus:ring-orange-300/80 sm:w-auto"
                 >
                   Submit Now
                 </a>
@@ -78,27 +83,32 @@ export default function SubmissionPage() {
             </div>
 
             <div className="p-5 sm:p-6">
-              <p className="text-sm text-slate-600">Deadline: {SUBMISSION_DEADLINE}</p>
+              <p className="text-sm text-slate-600">
+                Deadline: {SUBMISSION_DEADLINE}
+              </p>
               <div className="prose prose-slate mt-6 max-w-none">
                 <p className="text-center">
-                  <b className="text-[14pt] leading-[115%]">Submission Guidelines</b>
+                  <b className="text-[14pt] leading-[115%]">
+                    Submission Guidelines
+                  </b>
                 </p>
                 <p>
-                  All papers for the International Conference on Artificial Intelligence,
-                  Engineering and Sustainable Innovation (AIESI 2027) must be submitted
-                  electronically via email.
+                  All papers for the International Conference on Artificial
+                  Intelligence, Engineering and Sustainable Innovation (AIESI
+                  2027) must be submitted electronically via email.
                 </p>
                 <p>
-                  The conference welcomes original, unpublished research papers, review
-                  papers, and application-oriented studies related to its research areas.
+                  The conference welcomes original, unpublished research papers,
+                  review papers, and application-oriented studies related to its
+                  research areas.
                 </p>
 
                 <p>
                   <b>Submission Method</b>
                 </p>
                 <p>
-                  Authors should submit their full papers to the official conference email
-                  address:
+                  Authors should submit their full papers to the official
+                  conference email address:
                 </p>
                 <p>
                   <a href={`mailto:${CONFERENCE_INFO.contactEmail}`}>
@@ -126,16 +136,16 @@ export default function SubmissionPage() {
                   </IndentedItem>
                 ))}
                 <p>
-                  Authors are encouraged to retain a copy of their submission email for
-                  reference.
+                  Authors are encouraged to retain a copy of their submission
+                  email for reference.
                 </p>
 
                 <p>
                   <b>Author Information</b>
                 </p>
                 <p>
-                  The corresponding author should ensure that the following information is
-                  accurate:
+                  The corresponding author should ensure that the following
+                  information is accurate:
                 </p>
                 <ul>
                   {AUTHOR_FIELDS.map((field) => (
@@ -147,8 +157,8 @@ export default function SubmissionPage() {
                   <b>Manuscript File</b>
                 </p>
                 <p>
-                  Manuscripts should be prepared using the official AIESI 2027 paper
-                  template.
+                  Manuscripts should be prepared using the official AIESI 2027
+                  paper template.
                 </p>
                 <p>
                   <b>Language:</b> English
@@ -168,8 +178,8 @@ export default function SubmissionPage() {
                 </div>
                 <p className="text-center">
                   <i>
-                    Scan the QR code to access the official paper template and related
-                    documents.
+                    Scan the QR code to access the official paper template and
+                    related documents.
                   </i>
                 </p>
 

@@ -80,10 +80,22 @@ export default function CommitteesPage() {
             </div>
             <ul className="p-6 space-y-8">
               <li>
-                <b>Email:</b> <span><a href='mailto:AIESI2027@uneti.edu.vn'>AIESI2027@uneti.edu.vn</a> | <a href='mailto:web@uneti.edu.vn'>web@uneti.edu.vn</a></span>
+                <b>Email:</b>{" "}
+                <span>
+                  <a
+                    href="mailto:AIESI2027@uneti.edu.vn"
+                    className="text-blue-600 hover:text-blue-800"
+                  >
+                    AIESI2027@uneti.edu.vn
+                  </a>
+                </span>
               </li>
               <li>
-                <b>Peer Review:</b> <span>All submitted papers will undergo a rigorous double-blind peer-review process by the Technical Program Committee.</span>
+                <b>Peer Review:</b>{" "}
+                <span>
+                  All submitted papers will undergo a rigorous double-blind
+                  peer-review process by the Technical Program Committee.
+                </span>
               </li>
               <li>
                 <b>Language:</b> <span>English.</span>

@@ -10,7 +10,7 @@ const SCOPE_GROUPS = [
       "Artificial Intelligence, Information Technology, Electronics and Telecommunications",
       "Mechanical Engineering, Mechatronics, Robotics, Automation and Smart Manufacturing",
       "Advanced Materials, Energy, Green Technologies and Sustainable Development",
-      "Digital Economy, Business Management, Education and Innovation"
+      "Digital Economy, Business Management, Education and Innovation",
     ],
   },
   {
@@ -39,7 +39,7 @@ export function ScopeSection() {
           <h2 className="mt-3 text-3xl font-semibold leading-tight text-slate-950 sm:text-4xl">
             Conference objectives and research tracks
           </h2>
-          <p className="mt-5 text-base leading-8 text-slate-600">
+          <p className="mt-5 text-base leading-8 text-slate-600 text-justify">
             {CONFERENCE_INFO.description}
           </p>
         </div>
@@ -54,11 +54,16 @@ export function ScopeSection() {
                 <div className="flex h-11 w-11 items-center justify-center rounded-md bg-white text-slate-800 shadow-sm">
                   <Icon className="h-5 w-5" aria-hidden />
                 </div>
-                <h3 className="text-lg font-semibold text-slate-950">{title}</h3>
+                <h3 className="text-lg font-semibold text-slate-950">
+                  {title}
+                </h3>
               </div>
               <ul className="grid gap-3 sm:grid-cols-2">
                 {items.map((item) => (
-                  <li key={item} className="flex gap-3 text-sm leading-6 text-slate-700">
+                  <li
+                    key={item}
+                    className="flex gap-3 text-sm leading-6 text-slate-700"
+                  >
                     <CircleCheck
                       className="mt-0.5 h-4 w-4 shrink-0 text-teal-600"
                       aria-hidden
