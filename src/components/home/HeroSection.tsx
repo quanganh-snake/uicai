@@ -19,8 +19,8 @@ export function HeroSection() {
     <section className="relative isolate flex min-h-[calc(100svh-4rem)] items-stretch overflow-hidden bg-slate-950 px-4 py-14 text-white sm:min-h-[calc(100svh-5rem)] sm:px-6 sm:py-16 lg:px-8">
       <div className="absolute inset-0 -z-20">
         <Image
-          src="/images/bannerv1.png"
-          alt="AI-Native for Universities conference banner"
+          src="/images/bannerv1.jpg"
+          alt="Artificial Intelligence, Engineering and Sustainable Innovation banner"
           fill
           priority
           className="object-cover"
@@ -47,7 +47,7 @@ export function HeroSection() {
           </h1>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link
-              href="/icai-2026/authors"
+              href="/aiesi-2027/authors"
               className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-[#3124eb] px-5 text-sm font-semibold text-white shadow-lg transition hover:-translate-y-0.5 hover:shadow-xl"
             >
               Submit a Paper

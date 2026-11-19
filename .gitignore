@@ -40,3 +40,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# IIS deployment payload
+/dist-iis
+/aiesi2027-dist.zip
+
+# local testing screenshots
+/screenshots

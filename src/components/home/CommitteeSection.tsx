@@ -27,7 +27,7 @@ export function CommitteeSection() {
                 </div>
               </div>
               <Link
-                href="/icai-2026/committees"
+                href="/aiesi-2027/committees"
                 className="mt-7 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-md bg-white px-4 text-sm font-semibold text-slate-950 transition hover:bg-cyan-50"
               >
                 Meet the full committee

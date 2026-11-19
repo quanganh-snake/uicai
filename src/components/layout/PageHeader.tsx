@@ -7,17 +7,17 @@ interface PageHeaderProps {
 
 export function PageHeader({
   title,
-  badge = "AI-Native for Universities",
+  badge = "Artificial Intelligence, Engineering and Sustainable Innovation",
 }: PageHeaderProps) {
   return (
     <section className="relative flex min-h-65 items-center justify-center overflow-hidden bg-slate-950 px-4 py-14 text-center sm:min-h-80 sm:py-16">
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/bannerv1.png"
-          alt="AI-Native for Universities conference banner"
+          src="/images/bannerv1.jpg"
+          alt="Artificial Intelligence, Engineering and Sustainable Innovation banner"
           fill
           priority
-          className="object-cover"
+          className="object-cover object-[center_65%]"
           sizes="100vw"
         />
         <div

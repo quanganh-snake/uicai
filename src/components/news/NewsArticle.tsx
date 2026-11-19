@@ -12,15 +12,15 @@ export function NewsArticle({
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-slate-50">
-      <section className="relative flex min-h-[300px] items-center justify-center overflow-hidden bg-slate-950 px-4 py-16 text-center sm:min-h-[360px] sm:py-20">
+      <section className="relative flex min-h-75 items-center justify-center overflow-hidden bg-slate-950 px-4 py-16 text-center sm:min-h-90 sm:py-20">
         <div className="relative z-10 max-w-4xl">
           <Link
-            href="/icai-2026/news"
+            href="/aiesi-2027/news"
             className="text-sm font-semibold uppercase tracking-wider text-blue-300"
           >
             News
           </Link>
-          <h1 className="mt-4 text-3xl font-extrabold leading-tight tracking-tight text-white sm:text-4xl md:text-6xl">
+          <h1 className="mt-4 text-3xl font-extrabold leading-tight tracking-tight text-white sm:text-4xl md:text-6xl text-justify">
             {item.title}
           </h1>
           <time
@@ -34,8 +34,10 @@ export function NewsArticle({
 
       <section className="px-4 py-12 sm:py-16">
         <article className="mx-auto max-w-4xl rounded-lg border border-slate-900 bg-white p-5 shadow-sm sm:p-8 md:p-12">
-          <p className="mb-8 text-lg leading-8 text-slate-600 sm:text-xl">{item.excerpt}</p>
-          <div className="prose prose-slate max-w-none prose-headings:font-bold prose-img:rounded-lg sm:prose-lg">
+          <p className="mb-8 text-lg leading-8 text-slate-600 sm:text-xl text-justify">
+            {item.excerpt}
+          </p>
+          <div className="prose prose-slate max-w-none prose-headings:font-bold prose-img:rounded-lg sm:prose-lg text-justify">
             {children}
           </div>
         </article>

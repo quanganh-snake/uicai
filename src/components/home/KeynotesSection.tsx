@@ -30,7 +30,7 @@ export function KeynotesSection() {
             </p>
           </div>
           <Link
-            href="/icai-2026/keynotes"
+            href="/aiesi-2027/keynotes"
             className="inline-flex min-h-11 w-fit items-center justify-center gap-2 rounded-md border border-white/20 bg-white px-5 text-sm font-semibold text-slate-950 transition hover:-translate-y-0.5 hover:bg-cyan-50"
           >
             View all keynotes

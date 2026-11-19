@@ -1,0 +1,34 @@
+<!--
+  WinSW service definition for the Next.js standalone server.
+  Place WinSW.exe next to this file as aiesi2027-next.exe, then:
+    aiesi2027-next.exe install
+    aiesi2027-next.exe start
+  Environment values below are read by the server at runtime; NEXT_PUBLIC_*
+  values are already inlined at build time and are listed only for parity.
+-->
+<service>
+  <id>aiesi2027-next</id>
+  <name>AIESI 2027 (Next.js)</name>
+  <description>Next.js standalone server behind IIS for aiesi2027.uneti.edu.vn</description>
+  <executable>node</executable>
+  <arguments>server.js</arguments>
+  <workingdirectory>C:\Websites\aiesi2027\app</workingdirectory>
+  <log mode="roll-by-size">
+    <sizeThreshold>10240</sizeThreshold>
+    <keepFiles>8</keepFiles>
+  </log>
+  <logpath>C:\Websites\aiesi2027\logs</logpath>
+  <onfailure action="restart" delay="10 sec" />
+  <env name="NODE_ENV" value="production" />
+  <env name="HOSTNAME" value="127.0.0.1" />
+  <env name="PORT" value="3100" />
+  <env name="API_URL" value="https://apiv3.uneti.edu.vn" />
+  <env name="NEXT_PUBLIC_API_URL" value="https://apiv3.uneti.edu.vn" />
+  <env name="NEXT_PUBLIC_SITE_URL" value="https://aiesi2027.uneti.edu.vn" />
+  <env name="KHCN_AIESI_API_URL" value="https://apiv3.uneti.edu.vn" />
+  <env name="KHCN_AIESI_FILE_PUBLIC_URL" value="https://apiv3.uneti.edu.vn" />
+  <!-- Secrets: set the real values before installing the service. -->
+  <env name="PRIVATE_KEY_ENCRYPT" value="REPLACE_WITH_BACKEND_AES_KEY" />
+  <env name="SESSION_SECRET" value="REPLACE_WITH_RANDOM_64_HEX" />
+  <env name="ADMIN_USERNAMES" value="" />
+</service>

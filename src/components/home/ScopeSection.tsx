@@ -1,4 +1,4 @@
-import { Building2, CircleCheck, Landmark, Network } from "lucide-react";
+import { Building2, CircleCheck } from "lucide-react";
 import { CONFERENCE_INFO } from "@/data/conference";
 
 const SCOPE_GROUPS = [
@@ -13,16 +13,16 @@ const SCOPE_GROUPS = [
       "Digital Economy, Business Management, Education and Innovation",
     ],
   },
-  {
-    title: "Special Sessions",
-    icon: Network,
-    items: ["AI for Education", "AI for Industry"],
-  },
-  {
-    title: "Special Activity",
-    icon: Landmark,
-    items: ["AI Technology Exhibition"],
-  },
+  // {
+  //   title: "Special Sessions",
+  //   icon: Network,
+  //   items: ["AI for Education", "AI for Industry"],
+  // },
+  // {
+  //   title: "Special Activity",
+  //   icon: Landmark,
+  //   items: ["AI Technology Exhibition"],
+  // },
 ];
 
 export function ScopeSection() {

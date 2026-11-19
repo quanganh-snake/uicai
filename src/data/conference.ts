@@ -31,7 +31,7 @@ export interface TrackTopic {
 }
 
 export const CONFERENCE_INFO = {
-  name: "The International Conference on Artificial Intelligence, Engineering and Sustainable Innovation (AIESI 2027)",
+  name: "International Conference on Artificial Intelligence, Engineering and Sustainable Innovation (AIESI 2027)",
   shortName: "AIESI 2027",
   formerName: "AIESI 2027",
   badgeSubtitle: "AIESI 2027",
@@ -39,17 +39,17 @@ export const CONFERENCE_INFO = {
   tagline:
     "Connecting research breakthroughs with responsible, real-world impact.",
   date: "April 23, 2027",
-  venue: "University of Economics - Technology for Industries, Hanoi, Vietnam",
-  publication: "Conference proceedings with ISBN",
+  venue:
+    "University of Economics - Technology for Industries (UNETI), Hanoi, Vietnam",
+  publication: "Aiming for publication by Springer.",
   forumType: "Research, education, business and industry",
-  cmtUrl: "https://cmt3.research.microsoft.com/ICAIFAI2026/",
-  contactEmail: "AIESI2027@uneti.edu.vn",
-  webmasterEmail: "AIESI2027@uneti.edu.vn",
-  websiteUrl: "https://aiesi2027.uneti.edu.vn/",
-  phone: "(+84) 24 3862 1504",
-  officialWebsite: "uneti.edu.vn",
+  contactEmail: "aiesi2027@uneti.edu.vn",
+  webmasterEmail: "aiesi2027@uneti.edu.vn",
+  websiteUrl: "https://aiesi2027.uneti.edu.vn",
+  phone: "(+84) 964945889",
+  officialWebsite: "aiesi2027.uneti.edu.vn",
   description:
-    "The International Conference on Artificial Intelligence, Engineering and Sustainable Innovation (AIESI 2027) is co-organized by the University of Economics - Technology for Industries (UNETI), in collaboration with National Economics University (NEU) and Óbuda University (Hungary). The conference provides a prestigious international forum for researchers, scholars, practitioners, policymakers, and industry experts to present and discuss recent advances, emerging trends, interdisciplinary applications, and sustainable solutions across Artificial Intelligence, Advanced Engineering, Green Technologies, and the Digital Economy.",
+    "The International Conference on Artificial Intelligence, Engineering and Sustainable Innovation (AIESI 2027) is co-organized by the University of Economics – Technology for Industries (UNETI) and the National Economics University (NEU). The conference aims to bring together researchers, scholars, practitioners, policymakers, and industry experts to present and exchange scientific research findings, discuss recent advances and emerging trends, and explore interdisciplinary applications and sustainable solutions in Artificial Intelligence, Advanced Engineering, Green Technologies, and the Digital Economy.",
 };
 
 export const MILESTONES: Milestone[] = [
@@ -57,7 +57,7 @@ export const MILESTONES: Milestone[] = [
     id: "cfp",
     step: "00",
     title: "Call for Papers Announcement",
-    date: "November 01, 2026",
+    date: "November 18, 2026",
     badge: "other",
   },
   {
@@ -65,7 +65,7 @@ export const MILESTONES: Milestone[] = [
     step: "01",
     title: "Full Paper Submission Deadline",
     homeTitle: "Full Paper Submission Deadline",
-    date: "December 30, 2026",
+    date: "January 31, 2027",
     badge: "submission",
   },
   {
@@ -95,6 +95,15 @@ export const MILESTONES: Milestone[] = [
 
 export const SPEAKERS: Speaker[] = [
   {
+    id: "tran-tho-dat",
+    name: "Prof. Trần Thọ Đạt",
+    role: "Speaker 01",
+    avatar: "/images/keynote_stage/tran-tho-dat.jpg",
+    affiliation: [
+      "Chairman of Academic Board, National Economics University, Hanoi, Vietnam",
+    ],
+  },
+  {
     id: "rochet",
     name: "Prof. André-Louis Rochet",
     role: "Speaker 01",
@@ -110,9 +119,27 @@ export const SPEAKERS: Speaker[] = [
     role: "Speaker 02",
     avatar: "/images/keynote_stage/gyeng_chul_kim.jpg",
     affiliation: [
-      "CEO VINA Enesol, Former KAIST Professor, Expert in South Korean Industrial Policy",
+      "CEO of VINA Enesol; former KAIST Professor; expert in South Korean industrial policy",
     ],
     isKeynote: true,
+  },
+  {
+    id: "ho-tu-bao",
+    name: "Prof. Ho Tu Bao",
+    role: "Speaker 04",
+    avatar: "/images/keynote_stage/hotubao.jpg",
+    affiliation: [
+      "Director of the Data Science Laboratory, VIASM, Vietnam & Professor Emeritus, JAIST, Japan",
+    ],
+  },
+  {
+    id: "nguyen-duc-khuong",
+    name: "Prof. Nguyen Duc Khuong",
+    role: "Speaker 05",
+    avatar: "/images/keynote_stage/nguyenduckhuong.jpg",
+    affiliation: [
+      "Dean of EMLV Business School, France & President of AVSE Global",
+    ],
   },
   {
     id: "tran-thi-hong-lien",
@@ -121,26 +148,6 @@ export const SPEAKERS: Speaker[] = [
     avatar: "/images/keynote_stage/tran_thi_hong_lien.jpg",
     affiliation: [
       "University of Economics and Law, Vietnam National University Ho Chi Minh City (VNU-HCM)",
-    ],
-    isKeynote: true,
-  },
-  {
-    id: "tran-tho-dat",
-    name: "Prof. Trần Thọ Đạt",
-    role: "Speaker 04",
-    avatar: "/images/tran-tho-dat.webp",
-    affiliation: [
-      "Chairman of Academic Board, National Economics University, Hanoi",
-    ],
-    isKeynote: true,
-  },
-  {
-    id: "banh-tien-long",
-    name: "Prof. Dr. Banh Tien Long",
-    role: "Speaker 05",
-    avatar: "/images/keynote_stage/banh_tien_long.jpg",
-    affiliation: [
-      "President, The Vietnam Association for Science and Technology Editors, Vietnam",
     ],
     isKeynote: true,
   },

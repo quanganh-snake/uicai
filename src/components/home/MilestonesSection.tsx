@@ -30,7 +30,7 @@ export function MilestonesSection() {
             </h2>
           </div>
           <Link
-            href="/icai-2026/dates"
+            href="/aiesi-2027/dates"
             className="inline-flex items-center gap-2 text-sm font-semibold text-blue-700 hover:text-blue-900"
           >
             View all dates

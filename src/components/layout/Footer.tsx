@@ -2,11 +2,11 @@ import Link from "next/link";
 import { CONFERENCE_INFO } from "@/data/conference";
 
 const QUICK_LINKS = [
-  { href: "/icai-2026/program", label: "Program" },
-  { href: "/icai-2026/dates", label: "Dates" },
-  { href: "/icai-2026/authors", label: "Authors" },
-  { href: "/icai-2026/news", label: "News" },
-  { href: "/icai-2026/join", label: "Submission" },
+  { href: "/aiesi-2027/program", label: "Program" },
+  { href: "/aiesi-2027/dates", label: "Dates" },
+  { href: "/aiesi-2027/authors", label: "Authors" },
+  { href: "/aiesi-2027/news", label: "News" },
+  { href: "/aiesi-2027/join", label: "Submission" },
 ];
 
 export function Footer() {
@@ -92,7 +92,7 @@ export function Footer() {
       </div>
 
       <div className="mx-auto mt-12 flex w-full max-w-7xl flex-col items-center justify-between gap-4 border-t border-white/20 px-4 pt-8 text-center text-xs sm:px-6 md:flex-row md:text-left lg:px-8">
-        <p>© 2026 AI-Native for Universities. All rights reserved.</p>
+        <p>©AIESI2027. All rights reserved.</p>
         <p>
           Powered by{" "}
           <span className="font-medium">

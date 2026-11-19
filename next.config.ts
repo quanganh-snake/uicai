@@ -1,6 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // IIS hosts the compiled server from `.next/standalone/server.js`.
+  output: "standalone",
   experimental: {
     agentUpgrade: "security",
   },
@@ -8,7 +10,12 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "icai.cmcu.edu.vn",
+        hostname: "apiv3.uneti.edu.vn",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "aiesi2027.uneti.edu.vn",
         pathname: "/**",
       },
     ],
@@ -24,5 +31,3 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
-
-

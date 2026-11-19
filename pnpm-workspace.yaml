@@ -1,3 +1,11 @@
+supportedArchitectures:
+  os:
+    - current
+    - win32
+  cpu:
+    - current
+    - x64
+
 ignoredBuiltDependencies:
   - sharp
   - unrs-resolver

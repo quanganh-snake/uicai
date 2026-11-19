@@ -8,7 +8,11 @@ interface Partner {
 }
 
 const HOST_PARTNERS: Partner[] = [
-  { name: "University of Economics - Technology for Industries (UNETI), Vietnam", href: "https://uneti.edu.vn/", logo: "/images/LOGO_UNETI.ico" },
+  {
+    name: "University of Economics - Technology for Industries (UNETI), Vietnam",
+    href: "https://uneti.edu.vn/",
+    logo: "/images/LOGO_UNETI.ico",
+  },
 ];
 
 const COOPERATION_PARTNERS: Partner[] = [
@@ -16,12 +20,6 @@ const COOPERATION_PARTNERS: Partner[] = [
     name: "National Economics University (NEU), Vietnam",
     href: "https://neu.edu.vn/",
     logo: "/images/logo_NEU.png",
-    role: "Co-organizer",
-  },
-  {
-    name: "Óbuda University, Hungary",
-    href: "https://uni-obuda.hu",
-    logo: "/images/logoUHungary.jpeg",
     role: "Co-organizer",
   },
 ];
@@ -46,7 +44,9 @@ function PartnerGroup({
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
             {label}
           </p>
-          <h2 className="mt-3 text-3xl font-semibold text-slate-950">{title}</h2>
+          <h2 className="mt-3 text-3xl font-semibold text-slate-950">
+            {title}
+          </h2>
         </div>
         <div className="flex flex-wrap justify-center gap-5">
           {partners.map((partner) => (
